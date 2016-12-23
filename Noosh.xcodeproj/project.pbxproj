@@ -13,6 +13,8 @@
 		8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */; };
 		8CFFB0B71E0DD8B8009FCF5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B51E0DD8B8009FCF5B /* LaunchScreen.storyboard */; };
 		8CFFB0C21E0DD8B8009FCF5B /* NooshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0C11E0DD8B8009FCF5B /* NooshTests.swift */; };
+		906353EDFD28585B7A0EDFCD /* Pods_NooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */; };
+		B0F53F1DE967F35F5398255A /* Pods_Noosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B982718B7E1B2716BF010C /* Pods_Noosh.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NooshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		327D3DD28C777E3BD24233E3 /* Pods-NooshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NooshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8CFFB0A91E0DD8B8009FCF5B /* Noosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFFB0AE1E0DD8B8009FCF5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		8CFFB0BD1E0DD8B8009FCF5B /* NooshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NooshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFFB0C11E0DD8B8009FCF5B /* NooshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NooshTests.swift; sourceTree = "<group>"; };
 		8CFFB0C31E0DD8B8009FCF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71709E6E301BCFF87C018EC /* Pods-Noosh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noosh.release.xcconfig"; path = "Pods/Target Support Files/Pods-Noosh/Pods-Noosh.release.xcconfig"; sourceTree = "<group>"; };
+		CD6791040639C98C9CB584A2 /* Pods-Noosh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noosh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noosh/Pods-Noosh.debug.xcconfig"; sourceTree = "<group>"; };
+		E08557FB66244E8A259EFD79 /* Pods-NooshTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NooshTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests.release.xcconfig"; sourceTree = "<group>"; };
+		F6B982718B7E1B2716BF010C /* Pods_Noosh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noosh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F53F1DE967F35F5398255A /* Pods_Noosh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906353EDFD28585B7A0EDFCD /* Pods_NooshTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BFCD41CCFA11BE03C434977 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD6791040639C98C9CB584A2 /* Pods-Noosh.debug.xcconfig */,
+				B71709E6E301BCFF87C018EC /* Pods-Noosh.release.xcconfig */,
+				327D3DD28C777E3BD24233E3 /* Pods-NooshTests.debug.xcconfig */,
+				E08557FB66244E8A259EFD79 /* Pods-NooshTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8CFFB0A01E0DD8B8009FCF5B = {
 			isa = PBXGroup;
 			children = (
 				8CFFB0AB1E0DD8B8009FCF5B /* Noosh */,
 				8CFFB0C01E0DD8B8009FCF5B /* NooshTests */,
 				8CFFB0AA1E0DD8B8009FCF5B /* Products */,
+				4BFCD41CCFA11BE03C434977 /* Pods */,
+				FA5A39594D40ABABA5A4F727 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +119,15 @@
 			path = NooshTests;
 			sourceTree = "<group>";
 		};
+		FA5A39594D40ABABA5A4F727 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6B982718B7E1B2716BF010C /* Pods_Noosh.framework */,
+				196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CFFB0C61E0DD8B8009FCF5B /* Build configuration list for PBXNativeTarget "Noosh" */;
 			buildPhases = (
+				51BBF089E1EC54A0DE13D010 /* [CP] Check Pods Manifest.lock */,
 				8CFFB0A51E0DD8B8009FCF5B /* Sources */,
 				8CFFB0A61E0DD8B8009FCF5B /* Frameworks */,
 				8CFFB0A71E0DD8B8009FCF5B /* Resources */,
+				335D5BF27E40FF4873CB43DB /* [CP] Embed Pods Frameworks */,
+				E7049E35A3D2C13F76CF2FB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CFFB0C91E0DD8B8009FCF5B /* Build configuration list for PBXNativeTarget "NooshTests" */;
 			buildPhases = (
+				6EB170787759B00F24A995E4 /* [CP] Check Pods Manifest.lock */,
 				8CFFB0B91E0DD8B8009FCF5B /* Sources */,
 				8CFFB0BA1E0DD8B8009FCF5B /* Frameworks */,
 				8CFFB0BB1E0DD8B8009FCF5B /* Resources */,
+				1527AE1D5B7A37992D195D0D /* [CP] Embed Pods Frameworks */,
+				B76FA423F9706BD3A94C12B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +233,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1527AE1D5B7A37992D195D0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		335D5BF27E40FF4873CB43DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Noosh/Pods-Noosh-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51BBF089E1EC54A0DE13D010 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EB170787759B00F24A995E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B76FA423F9706BD3A94C12B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7049E35A3D2C13F76CF2FB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Noosh/Pods-Noosh-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CFFB0A51E0DD8B8009FCF5B /* Sources */ = {
@@ -339,6 +470,7 @@
 		};
 		8CFFB0C71E0DD8B8009FCF5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD6791040639C98C9CB584A2 /* Pods-Noosh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C974G5D47X;
@@ -352,6 +484,7 @@
 		};
 		8CFFB0C81E0DD8B8009FCF5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B71709E6E301BCFF87C018EC /* Pods-Noosh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C974G5D47X;
@@ -365,6 +498,7 @@
 		};
 		8CFFB0CA1E0DD8B8009FCF5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 327D3DD28C777E3BD24233E3 /* Pods-NooshTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -380,6 +514,7 @@
 		};
 		8CFFB0CB1E0DD8B8009FCF5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E08557FB66244E8A259EFD79 /* Pods-NooshTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
