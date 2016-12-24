@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C55C49F1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */; };
+		8C9BCEB71E0DDEDC00A2F50E /* SubredditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BCEB61E0DDEDC00A2F50E /* SubredditsView.xib */; };
+		8C9BCEB91E0DDF6900A2F50E /* SubredditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEB81E0DDF6900A2F50E /* SubredditsViewController.swift */; };
+		8C9BCEBB1E0DE0DB00A2F50E /* SubredditsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEBA1E0DE0DB00A2F50E /* SubredditsCoordinator.swift */; };
+		8C9BCEBD1E0DE3C800A2F50E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEBC1E0DE3C800A2F50E /* AppCoordinator.swift */; };
+		8C9BCEBF1E0E2FE500A2F50E /* SubredditEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEBE1E0E2FE500A2F50E /* SubredditEndpoint.swift */; };
+		8C9BCEC21E0EEF4B00A2F50E /* SubredditEndpointSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEC11E0EEF4B00A2F50E /* SubredditEndpointSpec.swift */; };
+		8C9BCEC71E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BCEC61E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json */; };
 		8CFFB0AD1E0DD8B8009FCF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */; };
-		8CFFB0AF1E0DD8B8009FCF5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0AE1E0DD8B8009FCF5B /* ViewController.swift */; };
-		8CFFB0B21E0DD8B8009FCF5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B01E0DD8B8009FCF5B /* Main.storyboard */; };
 		8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */; };
-		8CFFB0B71E0DD8B8009FCF5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B51E0DD8B8009FCF5B /* LaunchScreen.storyboard */; };
-		8CFFB0C21E0DD8B8009FCF5B /* NooshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0C11E0DD8B8009FCF5B /* NooshTests.swift */; };
 		906353EDFD28585B7A0EDFCD /* Pods_NooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */; };
 		B0F53F1DE967F35F5398255A /* Pods_Noosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B982718B7E1B2716BF010C /* Pods_Noosh.framework */; };
 /* End PBXBuildFile section */
@@ -30,15 +34,19 @@
 /* Begin PBXFileReference section */
 		196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NooshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		327D3DD28C777E3BD24233E3 /* Pods-NooshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NooshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SubredditsEndpointSpec_default_subreddits_short.json; path = Fixtures/OHHTTPStubs/API/SubredditsEndpointSpec_default_subreddits_short.json; sourceTree = "<group>"; };
+		8C9BCEB61E0DDEDC00A2F50E /* SubredditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubredditsView.xib; path = Features/Subreddits/SubredditsView.xib; sourceTree = "<group>"; };
+		8C9BCEB81E0DDF6900A2F50E /* SubredditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsViewController.swift; path = Features/Subreddits/SubredditsViewController.swift; sourceTree = "<group>"; };
+		8C9BCEBA1E0DE0DB00A2F50E /* SubredditsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsCoordinator.swift; path = Features/Subreddits/SubredditsCoordinator.swift; sourceTree = "<group>"; };
+		8C9BCEBC1E0DE3C800A2F50E /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8C9BCEBE1E0E2FE500A2F50E /* SubredditEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditEndpoint.swift; path = API/SubredditEndpoint.swift; sourceTree = "<group>"; };
+		8C9BCEC11E0EEF4B00A2F50E /* SubredditEndpointSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditEndpointSpec.swift; path = API/SubredditEndpointSpec.swift; sourceTree = "<group>"; };
+		8C9BCEC61E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SubredditsEndpointSpec_default_subreddits.json; path = Fixtures/OHHTTPStubs/API/SubredditsEndpointSpec_default_subreddits.json; sourceTree = "<group>"; };
 		8CFFB0A91E0DD8B8009FCF5B /* Noosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CFFB0AE1E0DD8B8009FCF5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8CFFB0B11E0DD8B8009FCF5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8CFFB0B61E0DD8B8009FCF5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CFFB0B81E0DD8B8009FCF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CFFB0BD1E0DD8B8009FCF5B /* NooshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NooshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CFFB0C11E0DD8B8009FCF5B /* NooshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NooshTests.swift; sourceTree = "<group>"; };
 		8CFFB0C31E0DD8B8009FCF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B71709E6E301BCFF87C018EC /* Pods-Noosh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noosh.release.xcconfig"; path = "Pods/Target Support Files/Pods-Noosh/Pods-Noosh.release.xcconfig"; sourceTree = "<group>"; };
 		CD6791040639C98C9CB584A2 /* Pods-Noosh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noosh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noosh/Pods-Noosh.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +85,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8C9BCEAC1E0DDD1000A2F50E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BCEBE1E0E2FE500A2F50E /* SubredditEndpoint.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		8C9BCEAD1E0DDD4100A2F50E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BCEAE1E0DDD5200A2F50E /* Subreddits */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		8C9BCEAE1E0DDD5200A2F50E /* Subreddits */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BCEB61E0DDEDC00A2F50E /* SubredditsView.xib */,
+				8C9BCEB81E0DDF6900A2F50E /* SubredditsViewController.swift */,
+				8C9BCEBA1E0DE0DB00A2F50E /* SubredditsCoordinator.swift */,
+			);
+			name = Subreddits;
+			sourceTree = "<group>";
+		};
+		8C9BCEC01E0EEF2600A2F50E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BCEC11E0EEF4B00A2F50E /* SubredditEndpointSpec.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		8C9BCEC31E0F03FC00A2F50E /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BCEC41E0F040600A2F50E /* OHHTTPStubs */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		8C9BCEC41E0F040600A2F50E /* OHHTTPStubs */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BCEC51E0F1CB100A2F50E /* API */,
+			);
+			name = OHHTTPStubs;
+			sourceTree = "<group>";
+		};
+		8C9BCEC51E0F1CB100A2F50E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */,
+				8C9BCEC61E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		8CFFB0A01E0DD8B8009FCF5B = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +153,10 @@
 				4BFCD41CCFA11BE03C434977 /* Pods */,
 				FA5A39594D40ABABA5A4F727 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 1;
 		};
 		8CFFB0AA1E0DD8B8009FCF5B /* Products */ = {
 			isa = PBXGroup;
@@ -100,11 +170,11 @@
 		8CFFB0AB1E0DD8B8009FCF5B /* Noosh */ = {
 			isa = PBXGroup;
 			children = (
+				8C9BCEAC1E0DDD1000A2F50E /* API */,
+				8C9BCEAD1E0DDD4100A2F50E /* Features */,
+				8C9BCEBC1E0DE3C800A2F50E /* AppCoordinator.swift */,
 				8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */,
-				8CFFB0AE1E0DD8B8009FCF5B /* ViewController.swift */,
-				8CFFB0B01E0DD8B8009FCF5B /* Main.storyboard */,
 				8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */,
-				8CFFB0B51E0DD8B8009FCF5B /* LaunchScreen.storyboard */,
 				8CFFB0B81E0DD8B8009FCF5B /* Info.plist */,
 			);
 			path = Noosh;
@@ -113,7 +183,8 @@
 		8CFFB0C01E0DD8B8009FCF5B /* NooshTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CFFB0C11E0DD8B8009FCF5B /* NooshTests.swift */,
+				8C9BCEC31E0F03FC00A2F50E /* Fixtures */,
+				8C9BCEC01E0EEF2600A2F50E /* API */,
 				8CFFB0C31E0DD8B8009FCF5B /* Info.plist */,
 			);
 			path = NooshTests;
@@ -219,9 +290,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFFB0B71E0DD8B8009FCF5B /* LaunchScreen.storyboard in Resources */,
+				8C9BCEB71E0DDEDC00A2F50E /* SubredditsView.xib in Resources */,
 				8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */,
-				8CFFB0B21E0DD8B8009FCF5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C55C49F1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json in Resources */,
+				8C9BCEC71E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFFB0AF1E0DD8B8009FCF5B /* ViewController.swift in Sources */,
+				8C9BCEBD1E0DE3C800A2F50E /* AppCoordinator.swift in Sources */,
+				8C9BCEBF1E0E2FE500A2F50E /* SubredditEndpoint.swift in Sources */,
+				8C9BCEB91E0DDF6900A2F50E /* SubredditsViewController.swift in Sources */,
 				8CFFB0AD1E0DD8B8009FCF5B /* AppDelegate.swift in Sources */,
+				8C9BCEBB1E0DE0DB00A2F50E /* SubredditsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFFB0C21E0DD8B8009FCF5B /* NooshTests.swift in Sources */,
+				8C9BCEC21E0EEF4B00A2F50E /* SubredditEndpointSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,25 +429,6 @@
 			targetProxy = 8CFFB0BE1E0DD8B8009FCF5B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8CFFB0B01E0DD8B8009FCF5B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CFFB0B11E0DD8B8009FCF5B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8CFFB0B51E0DD8B8009FCF5B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CFFB0B61E0DD8B8009FCF5B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8CFFB0C41E0DD8B8009FCF5B /* Debug */ = {
@@ -475,6 +531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C974G5D47X;
 				INFOPLIST_FILE = Noosh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.noosh.Noosh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C974G5D47X;
 				INFOPLIST_FILE = Noosh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.noosh.Noosh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -547,6 +605,7 @@
 				8CFFB0C81E0DD8B8009FCF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CFFB0C91E0DD8B8009FCF5B /* Build configuration list for PBXNativeTarget "NooshTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +614,7 @@
 				8CFFB0CB1E0DD8B8009FCF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
