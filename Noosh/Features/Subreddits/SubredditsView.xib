@@ -4,24 +4,34 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubredditsViewController" customModule="Noosh" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="VOo-hy-mrd" id="khv-7P-oAo"/>
+                <outlet property="view" destination="r2f-nN-7B8" id="JSW-iK-f2Q"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewController id="ss5-O1-bLo" customClass="SubredditsViewController" customModule="Noosh" customModuleProvider="target">
-            <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0sN-cb-Rh8">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                <connections>
-                    <outlet property="dataSource" destination="ss5-O1-bLo" id="mw3-8h-V0S"/>
-                    <outlet property="delegate" destination="ss5-O1-bLo" id="XU9-D2-Ufa"/>
-                </connections>
-            </tableView>
-            <point key="canvasLocation" x="-40" y="-64"/>
-        </tableViewController>
+        <view contentMode="scaleToFill" id="r2f-nN-7B8">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VOo-hy-mrd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VOo-hy-mrd" firstAttribute="height" secondItem="r2f-nN-7B8" secondAttribute="height" id="DBo-AK-2eH"/>
+                <constraint firstItem="VOo-hy-mrd" firstAttribute="width" secondItem="r2f-nN-7B8" secondAttribute="width" id="Efg-ag-Jt5"/>
+                <constraint firstItem="VOo-hy-mrd" firstAttribute="leading" secondItem="r2f-nN-7B8" secondAttribute="leading" id="I0E-br-WFa"/>
+                <constraint firstItem="VOo-hy-mrd" firstAttribute="top" secondItem="r2f-nN-7B8" secondAttribute="top" id="oWT-XO-D8k"/>
+            </constraints>
+            <point key="canvasLocation" x="-107" y="1372"/>
+        </view>
     </objects>
 </document>

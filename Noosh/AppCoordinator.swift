@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import reddift
 
 class AppCoordinator {
 	private let navigationController: UINavigationController
@@ -10,13 +11,15 @@ class AppCoordinator {
 	}
 
 	func start() {
-		
-
 		showSubreddits()
 	}
 
 	private func showSubreddits() {
-		let subredditsCoordinator = SubredditsCoordinator(navigationController: navigationController)
+		let subredditsCoordinator = SubredditsCoordinator(
+			navigationController: navigationController,
+			session: Session()
+		)
+
 		subredditsCoordinator.start()
 
 		childCoordinators.append(subredditsCoordinator)
