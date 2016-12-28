@@ -116,13 +116,13 @@
 		8C9BCEAE1E0DDD5200A2F50E /* Subreddits */ = {
 			isa = PBXGroup;
 			children = (
+				8C81B2C01E131819005A8959 /* SubredditCell.swift */,
 				8C55C4B11E1218780047F4D3 /* SubredditCellView.xib */,
 				8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */,
 				8C9BCEBA1E0DE0DB00A2F50E /* SubredditsCoordinator.swift */,
 				8C55C4AF1E1215D00047F4D3 /* SubredditsView.xib */,
 				8C9BCEB81E0DDF6900A2F50E /* SubredditsViewController.swift */,
 				8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */,
-				8C81B2C01E131819005A8959 /* SubredditCell.swift */,
 			);
 			name = Subreddits;
 			sourceTree = "<group>";

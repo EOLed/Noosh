@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubredditsViewController" customModule="Noosh" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="VOo-hy-mrd" id="khv-7P-oAo"/>
+                <outlet property="tableView" destination="VOo-hy-mrd" id="UxY-Px-P2t"/>
                 <outlet property="view" destination="r2f-nN-7B8" id="JSW-iK-f2Q"/>
             </connections>
         </placeholder>
