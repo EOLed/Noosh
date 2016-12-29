@@ -2,9 +2,6 @@ language: objective-c
 osx_image: xcode8
 env:
   - PLATFORM="ios" SCHEME="Noosh" TARGET="NooshTests" DESTINATION="platform=iOS Simulator,name=iPhone SE,OS=10.0" SDK="iphonesimulator10.0"
-before_install:
-  - brew update
-  - brew install cocoapods
 before_script:
   - xcodebuild -workspace Noosh.xcworkspace -list
   - instruments -s devices
