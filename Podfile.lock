@@ -38,7 +38,7 @@ DEPENDENCIES:
   - OHHTTPStubs
   - OHHTTPStubs/Swift
   - Quick (~> 1.0.0)
-  - R.swift (~> 3.2.0)
+  - R.swift (~> 3.0)
   - reddift (~> 2.0.0)
   - RxBlocking (~> 3.0)
   - RxCocoa (~> 3.0)
@@ -59,6 +59,6 @@ SPEC CHECKSUMS:
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   RxTest: 9867e6f3c435af30fbdb44b6d8ec30b78c40b515
 
-PODFILE CHECKSUM: 1992820e30c43edda11dfe93861865038915aba6
+PODFILE CHECKSUM: 6ad72ac14dac006960b4d756e986f64c5cee36f6
 
 COCOAPODS: 1.1.1
