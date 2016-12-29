@@ -10,5 +10,5 @@ before_script:
   - instruments -s devices
 script:
   - set -o pipefail
-  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" build test
+  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" test
 
