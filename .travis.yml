@@ -8,5 +8,5 @@ before_script:
   - xcodebuild -workspace Noosh.xcworkspace -list
   - instruments -s devices
 script:
-  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" -configuration Debug build test
+  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" build test
 
