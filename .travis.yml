@@ -4,9 +4,10 @@ env:
   - PLATFORM="ios" SCHEME="Noosh" TARGET="NooshTests" DESTINATION="platform=iOS Simulator,name=iPhone SE,OS=10.0" SDK="iphonesimulator10.0"
 before_install:
   - pod repo update
+  - pod install
 before_script:
   - xcodebuild -workspace Noosh.xcworkspace -list
   - instruments -s devices
 script:
-  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" build test
+  - xcodebuild -project Noosh.xcodeproj -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" build test
 
