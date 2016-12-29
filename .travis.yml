@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode8.2
 env:
-  - PLATFORM="ios" SCHEME="Noosh" TARGET="NooshTests" DESTINATION="platform=iOS Simulator,name=iPhone SE,OS=10.2" SDK="iphonesimulator10.2"
+  - PLATFORM="ios" SCHEME="Noosh" TARGET="NooshTests" DESTINATION="platform=iOS Simulator,name=iPhone SE,OS=10.2,id=DB794781-65A7-4884-8D00-AAC3CBD39A44" SDK="iphonesimulator10.2"
 before_install:
   - pod repo update > /dev/null
   - pod install
