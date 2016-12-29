@@ -5,6 +5,7 @@ env:
 before_install:
   - brew update
   - brew install cocoapods
+  - pod repo update
   - pod install
 before_script:
   - xcodebuild -workspace Noosh.xcworkspace -list
