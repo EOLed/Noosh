@@ -8,8 +8,8 @@ before_install:
   - pod repo update
   - pod install
 before_script:
-  - xcodebuild -workspace Noosh.xcworkspace -list
+  - xcodebuild -project Noosh.xcodeproj -list
   - instruments -s devices
 script:
-  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" -configuration Debug build test
+  - xcodebuild -project Noosh.xcodeproj -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" -configuration Debug build test
 
