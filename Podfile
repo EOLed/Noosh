@@ -4,7 +4,7 @@ target 'Noosh' do
   use_frameworks!
 
   # Pods for Noosh
-  pod 'R.swift', '~> 3.2.0'
+  pod 'R.swift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
   pod 'RxSwift', '~> 3.0'
   pod 'reddift', '~> 2.0.0'
