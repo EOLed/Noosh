@@ -28,8 +28,9 @@ class SubredditsViewController: UIViewController {
 		tableView.register(R.nib.subredditCellView(), forCellReuseIdentifier: cellIdentifier)
 
 		subreddits
-			.bindTo(tableView.rx.items(cellIdentifier: cellIdentifier, cellType: SubredditCell.self)) { (row, element, cell) in
-				cell.update(subreddit: element)
+			.bindTo(tableView.rx.items(cellIdentifier: cellIdentifier, cellType: SubredditCell.self)) { item in
+				let (_, model, cell) = item
+				cell.update(subreddit: model)
 			}
 			.addDisposableTo(disposeBag)
 	}
