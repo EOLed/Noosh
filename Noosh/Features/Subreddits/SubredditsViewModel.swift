@@ -21,8 +21,14 @@ class SubredditsViewModelImpl: SubredditsViewModel {
 	}
 
 	private func convertToViewModels(subreddits: [Subreddit]) -> [SubredditCellViewModel] {
-		return subreddits.flatMap {
-			SubredditCellViewModelImpl(name: $0.displayName, iconURL: URL(string: $0.iconImg))
-		}
+		return subreddits
+			.sorted(by: sortSubredditsFn)
+			.flatMap {
+				SubredditCellViewModelImpl(name: $0.displayName, iconURL: URL(string: $0.iconImg))
+			}
+	}
+
+	private func sortSubredditsFn(lhs: Subreddit, rhs: Subreddit) -> Bool {
+		return lhs.displayName.lowercased() < rhs.displayName.lowercased()
 	}
 }

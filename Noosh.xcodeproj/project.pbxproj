@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C1ECF8B1E1606200096F320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C1ECF8A1E1606200096F320 /* Localizable.strings */; };
+		8C1ECF8F1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1ECF8E1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift */; };
 		8C55C49F1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */; };
 		8C55C4A51E11AF860047F4D3 /* SubredditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */; };
 		8C55C4A71E11B33F0047F4D3 /* SubredditCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */; };
@@ -42,6 +43,7 @@
 		196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NooshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		327D3DD28C777E3BD24233E3 /* Pods-NooshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NooshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C1ECF8A1E1606200096F320 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8C1ECF8E1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsViewModelImplSpec.swift; path = Features/Subreddits/SubredditsViewModelImplSpec.swift; sourceTree = "<group>"; };
 		8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SubredditsEndpointSpec_default_subreddits_short.json; path = Fixtures/OHHTTPStubs/API/SubredditsEndpointSpec_default_subreddits_short.json; sourceTree = "<group>"; };
 		8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsViewModel.swift; path = Features/Subreddits/SubredditsViewModel.swift; sourceTree = "<group>"; };
 		8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditCellViewModel.swift; path = Features/Subreddits/SubredditCellViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +99,22 @@
 				E08557FB66244E8A259EFD79 /* Pods-NooshTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8C1ECF8C1E160F5C0096F320 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8C1ECF8D1E160F690096F320 /* Subreddits */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		8C1ECF8D1E160F690096F320 /* Subreddits */ = {
+			isa = PBXGroup;
+			children = (
+				8C1ECF8E1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift */,
+			);
+			name = Subreddits;
 			sourceTree = "<group>";
 		};
 		8C9BCEAC1E0DDD1000A2F50E /* API */ = {
@@ -204,6 +222,7 @@
 		8CFFB0C01E0DD8B8009FCF5B /* NooshTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C1ECF8C1E160F5C0096F320 /* Features */,
 				8C9BCEC31E0F03FC00A2F50E /* Fixtures */,
 				8C9BCEC01E0EEF2600A2F50E /* API */,
 				8CFFB0C31E0DD8B8009FCF5B /* Info.plist */,
@@ -459,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1ECF8F1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift in Sources */,
 				8C9BCEC21E0EEF4B00A2F50E /* SubredditEndpointSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

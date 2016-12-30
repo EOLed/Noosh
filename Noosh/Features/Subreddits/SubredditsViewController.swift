@@ -5,7 +5,7 @@ import RxSwift
 import RxCocoa
 
 class SubredditsViewController: UIViewController {
-	private let subreddits: Observable<[SubredditCellViewModel]>
+	private let subreddits: SubredditsViewModel
 	private let disposeBag: DisposeBag
 
 	@IBOutlet private weak var tableView: UITableView!
@@ -14,7 +14,7 @@ class SubredditsViewController: UIViewController {
 		fatalError("Not supported")
 	}
 
-	init(title: String, subreddits: Observable<[SubredditCellViewModel]>) {
+	init(title: String, subreddits: SubredditsViewModel) {
 		self.subreddits = subreddits
 		self.disposeBag = DisposeBag()
 
@@ -30,7 +30,7 @@ class SubredditsViewController: UIViewController {
 
 		tableView.register(R.nib.subredditCellView(), forCellReuseIdentifier: cellIdentifier)
 
-		subreddits
+		subreddits.cells.asObservable()
 			.bindTo(tableView.rx.items(cellIdentifier: cellIdentifier, cellType: SubredditCell.self)) { item in
 				let (_, model, cell) = item
 				cell.update(subreddit: model)
