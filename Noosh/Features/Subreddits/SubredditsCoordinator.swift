@@ -5,7 +5,7 @@ import RxSwift
 import Rswift
 
 class SubredditsCoordinator {
-	private let navigationController: UINavigationController
+	fileprivate let navigationController: UINavigationController
 	private let subredditsEndpoint: SubredditEndpoint
 	private var subredditsController: SubredditsViewController?
 
@@ -20,11 +20,17 @@ class SubredditsCoordinator {
 
 		let subredditsController = SubredditsViewController(
 			title: R.string.localizable.subredditsTitle(),
-			subreddits: SubredditsViewModelImpl(subreddits: subreddits)
+			subreddits: SubredditsViewModelImpl(subreddits: subreddits),
+			delegate: self
 		)
 
 		self.subredditsController = subredditsController
 
 		navigationController.pushViewController(subredditsController, animated: true)
+	}
+}
+
+extension SubredditsCoordinator: SubredditsViewControllerDelegate {
+	func didSelectSubreddit(subreddit: SubredditCellViewModel) {
 	}
 }

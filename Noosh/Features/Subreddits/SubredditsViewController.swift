@@ -7,6 +7,7 @@ import RxCocoa
 class SubredditsViewController: UIViewController {
 	private let subreddits: SubredditsViewModel
 	private let disposeBag: DisposeBag
+	private weak var delegate: SubredditsViewControllerDelegate?
 
 	@IBOutlet private weak var tableView: UITableView!
 
@@ -14,9 +15,14 @@ class SubredditsViewController: UIViewController {
 		fatalError("Not supported")
 	}
 
-	init(title: String, subreddits: SubredditsViewModel) {
+	init(
+		title: String,
+		subreddits: SubredditsViewModel,
+		delegate: SubredditsViewControllerDelegate?
+	) {
 		self.subreddits = subreddits
 		self.disposeBag = DisposeBag()
+		self.delegate = delegate
 
 		super.init(nibName: R.nib.subredditsView.name, bundle: R.nib.subredditsView.bundle)
 
@@ -36,5 +42,15 @@ class SubredditsViewController: UIViewController {
 				cell.update(subreddit: model)
 			}
 			.addDisposableTo(disposeBag)
+
+		tableView.rx.modelSelected(SubredditCellViewModel.self)
+			.subscribe(onNext: { [weak self] subreddit in
+				self?.delegate?.didSelectSubreddit(subreddit: subreddit)
+			})
+			.addDisposableTo(disposeBag)
 	}
+}
+
+protocol SubredditsViewControllerDelegate: class {
+	func didSelectSubreddit(subreddit: SubredditCellViewModel)
 }
