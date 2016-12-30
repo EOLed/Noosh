@@ -15,19 +15,12 @@ class SubredditsCoordinator {
 	}
 
 	func start() {
-		let subreddits =
-			subredditsEndpoint
-				.getSubreddits(subredditsWhere: .default)
-				.observeOn(MainScheduler.instance)
-				.flatMap {
-					return Observable.of($0.map { s -> SubredditCellViewModel in
-						SubredditCellViewModelImpl(name: s.displayName, iconURL: URL(string: s.iconImg))
-					})
-				}
+		let subreddits = subredditsEndpoint.getSubreddits(subredditsWhere: .default)
+			.observeOn(MainScheduler.instance)
 
 		let subredditsController = SubredditsViewController(
 			title: R.string.localizable.subredditsTitle(),
-			subreddits: subreddits
+			subreddits: SubredditsViewModelImpl(subreddits: subreddits)
 		)
 
 		self.subredditsController = subredditsController
