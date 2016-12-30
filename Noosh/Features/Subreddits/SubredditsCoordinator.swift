@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import reddift
 import RxSwift
+import Rswift
 
 class SubredditsCoordinator {
 	private let navigationController: UINavigationController
@@ -20,11 +21,15 @@ class SubredditsCoordinator {
 				.observeOn(MainScheduler.instance)
 				.flatMap {
 					return Observable.of($0.map { s -> SubredditCellViewModel in
-						SubredditCellViewModelImpl(name: s.displayName, logoURL: URL(string: s.iconImg))
+						SubredditCellViewModelImpl(name: s.displayName, iconURL: URL(string: s.iconImg))
 					})
 				}
 
-		let subredditsController = SubredditsViewController(subreddits: subreddits)
+		let subredditsController = SubredditsViewController(
+			title: R.string.localizable.subredditsTitle(),
+			subreddits: subreddits
+		)
+
 		self.subredditsController = subredditsController
 
 		navigationController.pushViewController(subredditsController, animated: true)

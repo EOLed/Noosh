@@ -12,12 +12,12 @@ class SubredditCell: UITableViewCell {
 
 		guard let placeholder = R.image.subredditPlaceholder() else { return }
 
-		if let logoURL = subreddit.logoURL {
+		if let iconURL = subreddit.iconURL {
 			let filter = AspectScaledToFillSizeWithRoundedCornersFilter(
 				size: iconImageView.frame.size,
 				radius: iconImageView.frame.size.width / 2
 			)
-			iconImageView.af_setImage(withURL: logoURL, placeholderImage: placeholder, filter: filter)
+			iconImageView.af_setImage(withURL: iconURL, placeholderImage: placeholder, filter: filter)
 		} else {
 			iconImageView.image = placeholder
 		}

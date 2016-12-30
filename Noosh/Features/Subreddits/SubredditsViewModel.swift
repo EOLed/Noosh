@@ -22,7 +22,7 @@ class SubredditsViewModelImpl: SubredditsViewModel {
 
 	private func convertToViewModels(subreddits: [Subreddit]) -> [SubredditCellViewModel] {
 		return subreddits.flatMap {
-			SubredditCellViewModelImpl(name: $0.displayName, logoURL: URL(string:$0.iconImg))
+			SubredditCellViewModelImpl(name: $0.displayName, iconURL: URL(string: $0.iconImg))
 		}
 	}
 }

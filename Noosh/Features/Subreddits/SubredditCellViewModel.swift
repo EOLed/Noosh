@@ -3,10 +3,10 @@ import RxSwift
 
 protocol SubredditCellViewModel {
 	var name: String { get }
-	var logoURL: URL? { get }
+	var iconURL: URL? { get }
 }
 
 struct SubredditCellViewModelImpl: SubredditCellViewModel {
 	let name: String
-	let logoURL: URL?
+	let iconURL: URL?
 }
