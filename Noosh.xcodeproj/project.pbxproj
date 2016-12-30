@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C1ECF8B1E1606200096F320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C1ECF8A1E1606200096F320 /* Localizable.strings */; };
 		8C55C49F1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */; };
 		8C55C4A51E11AF860047F4D3 /* SubredditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */; };
 		8C55C4A71E11B33F0047F4D3 /* SubredditCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NooshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		327D3DD28C777E3BD24233E3 /* Pods-NooshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NooshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NooshTests/Pods-NooshTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C1ECF8A1E1606200096F320 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SubredditsEndpointSpec_default_subreddits_short.json; path = Fixtures/OHHTTPStubs/API/SubredditsEndpointSpec_default_subreddits_short.json; sourceTree = "<group>"; };
 		8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsViewModel.swift; path = Features/Subreddits/SubredditsViewModel.swift; sourceTree = "<group>"; };
 		8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditCellViewModel.swift; path = Features/Subreddits/SubredditCellViewModel.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */,
 				8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */,
 				8CFFB0B81E0DD8B8009FCF5B /* Info.plist */,
+				8C1ECF8A1E1606200096F320 /* Localizable.strings */,
 				8C55C4A91E11C8C10047F4D3 /* R.generated.swift */,
 			);
 			path = Noosh;
@@ -309,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1ECF8B1E1606200096F320 /* Localizable.strings in Resources */,
 				8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */,
 				8C55C4B01E1215D00047F4D3 /* SubredditsView.xib in Resources */,
 				8C55C4AC1E1214EE0047F4D3 /* Default-568h@2x.png in Resources */,

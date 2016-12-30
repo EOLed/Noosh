@@ -14,10 +14,13 @@ class SubredditsViewController: UIViewController {
 		fatalError("Not supported")
 	}
 
-	init(subreddits: Observable<[SubredditCellViewModel]>) {
+	init(title: String, subreddits: Observable<[SubredditCellViewModel]>) {
 		self.subreddits = subreddits
 		self.disposeBag = DisposeBag()
+
 		super.init(nibName: R.nib.subredditsView.name, bundle: R.nib.subredditsView.bundle)
+
+		self.title = title
 	}
 
 	override func viewDidLoad() {
