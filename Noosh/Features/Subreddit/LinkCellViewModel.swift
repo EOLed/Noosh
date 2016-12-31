@@ -11,6 +11,7 @@ protocol LinkCellViewModel {
 	var commentCount: Int { get }
 	var voteCount: Int { get }
 	var previewImageURL: NSURL? { get }
+	var previewImageVisible: Bool { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -22,6 +23,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let voteCount: Int
 	let previewImageURL: NSURL?
 	let moderatorIconVisible: Bool
+	let previewImageVisible: Bool
 
 	private let createdAt: Int
 
@@ -47,6 +49,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.voteCount = voteCount
 		self.previewImageURL = previewImageURL
 		self.createdAt = createdAt
+		self.previewImageVisible = false //previewImageURL != nil
 	}
 
 
@@ -68,8 +71,8 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	}
 
 	private func buildDetails() -> String {
-		let details = String(createdAt)
-		if let authorFlair = self.authorFlair {
+		let details = "4h"
+		if let authorFlair = self.authorFlair, authorFlair != "" {
 			return "\(authorFlair) · \(details)"
 		}
 

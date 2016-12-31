@@ -36,7 +36,7 @@ class SubredditViewController: UIViewController {
 			}
 			.addDisposableTo(disposeBag)
 
-		listing.estimatedRowHeight = 200.0
+		listing.estimatedRowHeight = 150
 		listing.rowHeight = UITableViewAutomaticDimension
 		listing.setNeedsLayout()
 	}
