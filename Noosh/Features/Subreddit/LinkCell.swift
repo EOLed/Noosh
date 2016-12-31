@@ -10,6 +10,7 @@ class LinkCell: UITableViewCell {
 	@IBOutlet private weak var title: UILabel!
 	@IBOutlet private weak var commentCount: UILabel!
 	@IBOutlet private weak var voteCount: UILabel!
+	@IBOutlet private weak var previewImageWidthConstraint: CollapsibleConstraint!
 
 	func update(link: LinkCellViewModel) {
 		username.text = link.username
@@ -19,5 +20,6 @@ class LinkCell: UITableViewCell {
 		title.text = link.title
 		commentCount.text = String(link.commentCount)
 		voteCount.text = String(link.voteCount)
+		previewImageWidthConstraint.toggle(show: link.previewImageVisible)
 	}
 }
