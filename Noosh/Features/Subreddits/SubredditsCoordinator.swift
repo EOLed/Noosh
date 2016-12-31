@@ -4,14 +4,18 @@ import reddift
 import RxSwift
 import Rswift
 
-class SubredditsCoordinator {
+class SubredditsCoordinator: Coordinator {
 	fileprivate let navigationController: UINavigationController
-	private let subredditsEndpoint: SubredditEndpoint
+	private let subredditsEndpoint: SubredditsEndpoint
 	private var subredditsController: SubredditsViewController?
+	fileprivate let session: Session
+
+	fileprivate var subredditCoordinator: SubreddditCoordinator?
 
 	init(navigationController: UINavigationController, session: Session) {
 		self.navigationController = navigationController
-		self.subredditsEndpoint = SubredditEndpoint(session: session)
+		self.subredditsEndpoint = SubredditsEndpoint(session: session)
+		self.session = session
 	}
 
 	func start() {
@@ -32,5 +36,10 @@ class SubredditsCoordinator {
 
 extension SubredditsCoordinator: SubredditsViewControllerDelegate {
 	func didSelectSubreddit(subreddit: SubredditCellViewModel) {
+		let subredditCoordinator = SubreddditCoordinator(navigationController: navigationController,	session: session)
+
+		self.subredditCoordinator = subredditCoordinator
+
+		subredditCoordinator.start(subreddit: subreddit.name)
 	}
 }

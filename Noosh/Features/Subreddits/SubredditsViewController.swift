@@ -37,8 +37,8 @@ class SubredditsViewController: UIViewController {
 		tableView.register(R.nib.subredditCellView(), forCellReuseIdentifier: cellIdentifier)
 
 		subreddits.cells.asObservable()
-			.bindTo(tableView.rx.items(cellIdentifier: cellIdentifier, cellType: SubredditCell.self)) { item in
-				let (_, model, cell) = item
+			.bindTo(tableView.rx.items(cellIdentifier: cellIdentifier, cellType: SubredditCell.self)) {
+				let (_, model, cell) = $0
 				cell.update(subreddit: model)
 			}
 			.addDisposableTo(disposeBag)
