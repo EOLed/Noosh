@@ -22,6 +22,8 @@
 		8C1ECFAA1E17719A0096F320 /* SubredditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1ECFA91E17719A0096F320 /* SubredditView.xib */; };
 		8C1ECFAC1E1773F10096F320 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1ECFAB1E1773F10096F320 /* LinkCell.swift */; };
 		8C1ECFAE1E1779E10096F320 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1ECFAD1E1779E10096F320 /* Coordinator.swift */; };
+		8C1ECFB01E178E960096F320 /* PrettyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1ECFAF1E178E960096F320 /* PrettyNumbers.swift */; };
+		8C1ECFB31E178EF00096F320 /* PrettyNumbersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1ECFB21E178EF00096F320 /* PrettyNumbersSpec.swift */; };
 		8C55C49F1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */; };
 		8C55C4A51E11AF860047F4D3 /* SubredditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */; };
 		8C55C4A71E11B33F0047F4D3 /* SubredditCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */; };
@@ -70,6 +72,8 @@
 		8C1ECFA91E17719A0096F320 /* SubredditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubredditView.xib; path = Features/Subreddit/SubredditView.xib; sourceTree = "<group>"; };
 		8C1ECFAB1E1773F10096F320 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkCell.swift; path = Features/Subreddit/LinkCell.swift; sourceTree = "<group>"; };
 		8C1ECFAD1E1779E10096F320 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Core/Coordinator.swift; sourceTree = "<group>"; };
+		8C1ECFAF1E178E960096F320 /* PrettyNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrettyNumbers.swift; path = Core/PrettyNumbers.swift; sourceTree = "<group>"; };
+		8C1ECFB21E178EF00096F320 /* PrettyNumbersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyNumbersSpec.swift; sourceTree = "<group>"; };
 		8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SubredditsEndpointSpec_default_subreddits_short.json; path = Fixtures/OHHTTPStubs/API/SubredditsEndpointSpec_default_subreddits_short.json; sourceTree = "<group>"; };
 		8C55C4A41E11AF860047F4D3 /* SubredditsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsViewModel.swift; path = Features/Subreddits/SubredditsViewModel.swift; sourceTree = "<group>"; };
 		8C55C4A61E11B33F0047F4D3 /* SubredditCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditCellViewModel.swift; path = Features/Subreddits/SubredditCellViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			children = (
 				8C1ECF951E17405C0096F320 /* CollapsibleConstraint.swift */,
 				8C1ECFAD1E1779E10096F320 /* Coordinator.swift */,
+				8C1ECFAF1E178E960096F320 /* PrettyNumbers.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -171,6 +176,14 @@
 				8C1ECFA51E175BFC0096F320 /* LinkCellViewModelImplSpec.swift */,
 			);
 			name = Subreddit;
+			sourceTree = "<group>";
+		};
+		8C1ECFB11E178EDA0096F320 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8C1ECFB21E178EF00096F320 /* PrettyNumbersSpec.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		8C9BCEAC1E0DDD1000A2F50E /* API */ = {
@@ -285,6 +298,7 @@
 		8CFFB0C01E0DD8B8009FCF5B /* NooshTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C1ECFB11E178EDA0096F320 /* Core */,
 				8C1ECF8C1E160F5C0096F320 /* Features */,
 				8C9BCEC31E0F03FC00A2F50E /* Fixtures */,
 				8C9BCEC01E0EEF2600A2F50E /* API */,
@@ -533,6 +547,7 @@
 				8C55C4A71E11B33F0047F4D3 /* SubredditCellViewModel.swift in Sources */,
 				8C81B2C11E131819005A8959 /* SubredditCell.swift in Sources */,
 				8C9BCEBD1E0DE3C800A2F50E /* AppCoordinator.swift in Sources */,
+				8C1ECFB01E178E960096F320 /* PrettyNumbers.swift in Sources */,
 				8C9BCEBF1E0E2FE500A2F50E /* SubredditsEndpoint.swift in Sources */,
 				8C1ECFA31E1755130096F320 /* LinkCellViewModel.swift in Sources */,
 				8C1ECFAC1E1773F10096F320 /* LinkCell.swift in Sources */,
@@ -553,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C1ECF8F1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift in Sources */,
+				8C1ECFB31E178EF00096F320 /* PrettyNumbersSpec.swift in Sources */,
 				8C1ECFA61E175BFC0096F320 /* LinkCellViewModelImplSpec.swift in Sources */,
 				8C1ECFA11E17457A0096F320 /* SubredditEndpointSpec.swift in Sources */,
 				8C9BCEC21E0EEF4B00A2F50E /* SubredditsEndpointSpec.swift in Sources */,

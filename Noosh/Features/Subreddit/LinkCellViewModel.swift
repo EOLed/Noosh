@@ -8,10 +8,11 @@ protocol LinkCellViewModel {
 	var adminIconVisible: Bool { get }
 	var details: String { get }
 	var title: String { get }
-	var commentCount: Int { get }
-	var voteCount: Int { get }
+	var commentCount: String { get }
+	var voteCount: String { get }
 	var previewImageURL: NSURL? { get }
 	var previewImageVisible: Bool { get }
+	var stickyIconVisible: Bool { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -19,11 +20,12 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let authorFlair: String?
 	let adminIconVisible: Bool = false
 	let title: String
-	let commentCount: Int
-	let voteCount: Int
+	let commentCount: String
+	let voteCount: String
 	let previewImageURL: NSURL?
 	let moderatorIconVisible: Bool
 	let previewImageVisible: Bool
+	let stickyIconVisible: Bool
 
 	private let createdAt: Int
 
@@ -38,8 +40,9 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		title: String,
 		previewImageURL: NSURL? = nil,
 		createdAt: Int,
-		commentCount: Int,
-		voteCount: Int
+		commentCount: String,
+		voteCount: String,
+		stickyIconVisible: Bool
 	) {
 		self.username = username
 		self.authorFlair = authorFlair
@@ -50,6 +53,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.previewImageURL = previewImageURL
 		self.createdAt = createdAt
 		self.previewImageVisible = false //previewImageURL != nil
+		self.stickyIconVisible = stickyIconVisible
 	}
 
 
@@ -58,6 +62,8 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		let previewImageURL: NSURL? =
 			previewImageURLString == nil ? nil : NSURL(string: previewImageURLString!)
 
+		let prettyNumbers = PrettyNumbers()
+
 		self.init(
 			username: link.author,
 			authorFlair: link.authorFlairText,
@@ -65,8 +71,9 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 			title: link.title,
 			previewImageURL: previewImageURL,
 			createdAt: link.createdUtc,
-			commentCount: link.numComments,
-			voteCount: link.ups - link.downs
+			commentCount: prettyNumbers.commentCount(link.numComments),
+			voteCount: prettyNumbers.voteCount(link.ups - link.downs),
+			stickyIconVisible: link.stickied
 		)
 	}
 
