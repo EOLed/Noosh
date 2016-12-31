@@ -2,9 +2,9 @@ import Foundation
 import UIKit
 import reddift
 
-class AppCoordinator {
+class AppCoordinator: Coordinator {
 	private let navigationController: UINavigationController
-	private var childCoordinators: [AnyObject] = []
+	private var childCoordinators: [Coordinator] = []
 
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
