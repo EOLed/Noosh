@@ -6,13 +6,15 @@ protocol LinkCellViewModel {
 	var authorFlair: String? { get }
 	var moderatorIconVisible: Bool { get }
 	var adminIconVisible: Bool { get }
-	var details: String { get }
+	var details: String? { get }
 	var title: String { get }
 	var commentCount: String { get }
 	var voteCount: String { get }
 	var previewImageURL: NSURL? { get }
 	var previewImageVisible: Bool { get }
 	var stickyIconVisible: Bool { get }
+	var subreddit: String { get }
+	var detailsVisible: Bool { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -26,14 +28,26 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let moderatorIconVisible: Bool
 	let previewImageVisible: Bool
 	let stickyIconVisible: Bool
+	let subreddit: String
 
 	private let createdAt: Int
 
-	var details: String {
+	var details: String? {
 		get { return buildDetails() }
 	}
 
+	var detailsVisible: Bool {
+		get {
+			if let details = self.details, details != "" {
+				return true
+			}
+
+			return false
+		}
+	}
+
 	init(
+		subreddit: String,
 		username: String,
 		authorFlair: String? = nil,
 		distinguished: Bool,
@@ -44,6 +58,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		voteCount: String,
 		stickyIconVisible: Bool
 	) {
+		self.subreddit = subreddit
 		self.username = username
 		self.authorFlair = authorFlair
 		self.moderatorIconVisible = distinguished
@@ -65,6 +80,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		let prettyNumbers = PrettyNumbers()
 
 		self.init(
+			subreddit: "r/\(link.subreddit)",
 			username: link.author,
 			authorFlair: link.authorFlairText,
 			distinguished: link.distinguished,
@@ -77,12 +93,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		)
 	}
 
-	private func buildDetails() -> String {
-		let details = "4h"
-		if let authorFlair = self.authorFlair, authorFlair != "" {
-			return "\(authorFlair) · \(details)"
-		}
-
-		return details
+	private func buildDetails() -> String? {
+		return authorFlair
 	}
 }
