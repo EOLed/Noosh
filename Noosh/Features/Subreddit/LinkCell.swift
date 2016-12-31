@@ -1,5 +1,7 @@
 import Foundation
 import UIKit
+import AlamofireImage
+import Rswift
 
 class LinkCell: UITableViewCell {
 	
@@ -16,6 +18,7 @@ class LinkCell: UITableViewCell {
 	@IBOutlet private weak var created: UILabel!
 	@IBOutlet private weak var subredditMarginWidthConstraint: CollapsibleConstraint!
 	@IBOutlet private weak var detailsMarginWidthConstraint: CollapsibleConstraint!
+	@IBOutlet private weak var previewImage: UIImageView!
 
 	func update(link: LinkCellViewModel) {
 		username.text = link.username
@@ -35,6 +38,11 @@ class LinkCell: UITableViewCell {
 		} else {
 			subreddit.text = ""
 			subredditMarginWidthConstraint.collapse()
+		}
+
+		if let previewImageURL = link.previewImageURL, link.previewImageVisible {
+			previewImage.af_setImage(withURL: previewImageURL)
+			previewImage.layer.cornerRadius = 5
 		}
 	}
 }
