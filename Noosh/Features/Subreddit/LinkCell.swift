@@ -29,6 +29,12 @@ class LinkCell: UITableViewCell {
 		stickyIconMarginWidthConstraint.toggle(show: link.stickyIconVisible)
 
 		detailsMarginWidthConstraint.toggle(show: link.detailsVisible)
-		subreddit.text = link.subreddit
+
+		if link.subredditVisible {
+			subreddit.text = link.subreddit
+		} else {
+			subreddit.text = ""
+			subredditMarginWidthConstraint.collapse()
+		}
 	}
 }

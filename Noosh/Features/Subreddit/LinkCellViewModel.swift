@@ -15,6 +15,7 @@ protocol LinkCellViewModel {
 	var stickyIconVisible: Bool { get }
 	var subreddit: String { get }
 	var detailsVisible: Bool { get }
+	var subredditVisible: Bool { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -29,6 +30,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let previewImageVisible: Bool
 	let stickyIconVisible: Bool
 	let subreddit: String
+	let subredditVisible: Bool
 
 	private let createdAt: Int
 
@@ -56,7 +58,8 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		createdAt: Int,
 		commentCount: String,
 		voteCount: String,
-		stickyIconVisible: Bool
+		stickyIconVisible: Bool,
+		subredditVisible: Bool
 	) {
 		self.subreddit = subreddit
 		self.username = username
@@ -69,10 +72,11 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.createdAt = createdAt
 		self.previewImageVisible = false //previewImageURL != nil
 		self.stickyIconVisible = stickyIconVisible
+		self.subredditVisible = subredditVisible
 	}
 
 
-	convenience init(link: Link) {
+	convenience init(link: Link, showSubreddit: Bool) {
 		let previewImageURLString = link.media?.oembed.thumbnailUrl
 		let previewImageURL: NSURL? =
 			previewImageURLString == nil ? nil : NSURL(string: previewImageURLString!)
@@ -89,7 +93,8 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 			createdAt: link.createdUtc,
 			commentCount: prettyNumbers.commentCount(link.numComments),
 			voteCount: prettyNumbers.voteCount(link.ups - link.downs),
-			stickyIconVisible: link.stickied
+			stickyIconVisible: link.stickied,
+			subredditVisible: showSubreddit
 		)
 	}
 
