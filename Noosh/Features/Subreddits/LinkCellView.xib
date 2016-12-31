@@ -15,38 +15,38 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="bsK-SN-Djh" id="Ccl-UL-Srt">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kAV-j8-6kJ" userLabel="Link Preview">
-                        <rect key="frame" x="303" y="8" width="64" height="64"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kAV-j8-6kJ" userLabel="Link Preview">
+                        <rect key="frame" x="303" y="6" width="64" height="64"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="64" id="TLg-Ie-uC6"/>
                             <constraint firstAttribute="width" constant="64" id="bgu-vA-eu8" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="VOP-NQ-EEw">
-                        <rect key="frame" x="80" y="98" width="10" height="10"/>
+                        <rect key="frame" x="80" y="97.5" width="10" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="Ane-MP-FeI"/>
                             <constraint firstAttribute="width" constant="10" id="Cbs-wO-cye"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vote" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-2g-idw">
-                        <rect key="frame" x="8" y="97" width="12" height="12"/>
+                        <rect key="frame" x="8" y="96.5" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="FDN-Ft-O3C"/>
                             <constraint firstAttribute="height" constant="12" id="e0i-sY-NT5"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cff-Lj-eAB" userLabel="Comment Count">
-                        <rect key="frame" x="92" y="96" width="8" height="15"/>
+                        <rect key="frame" x="92" y="95.5" width="8" height="15"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-Ry-bi4" userLabel="Vote Count">
-                        <rect key="frame" x="22" y="96" width="8" height="15"/>
+                        <rect key="frame" x="22" y="95.5" width="8" height="15"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="39 year old Manu Ginobili still has some fight left" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zol-Yj-LBW" userLabel="Link title">
-                        <rect key="frame" x="8" y="28" width="290" height="60.5"/>
+                        <rect key="frame" x="8" y="29" width="290" height="58.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -136,8 +136,9 @@
                     <constraint firstAttribute="bottomMargin" secondItem="VOP-NQ-EEw" secondAttribute="bottom" id="cLD-j3-0aq"/>
                     <constraint firstItem="Cff-Lj-eAB" firstAttribute="leading" secondItem="VOP-NQ-EEw" secondAttribute="trailing" constant="2" id="cU9-vt-6NX"/>
                     <constraint firstItem="HJz-6D-yvp" firstAttribute="centerY" secondItem="F4V-xr-Ct5" secondAttribute="centerY" id="dG7-3L-o68"/>
+                    <constraint firstAttribute="topMargin" secondItem="kAV-j8-6kJ" secondAttribute="top" constant="2" id="kOj-MU-dcy"/>
                     <constraint firstItem="KrR-Pm-dNa" firstAttribute="top" secondItem="Ccl-UL-Srt" secondAttribute="topMargin" id="nJO-YL-o6G"/>
-                    <constraint firstItem="zol-Yj-LBW" firstAttribute="top" secondItem="GR7-TW-CgX" secondAttribute="bottom" constant="5" id="oF9-0U-hzS"/>
+                    <constraint firstItem="zol-Yj-LBW" firstAttribute="top" secondItem="GR7-TW-CgX" secondAttribute="bottom" constant="6" id="oF9-0U-hzS"/>
                     <constraint firstItem="kqH-dD-R1p" firstAttribute="leading" secondItem="4GE-mP-o3U" secondAttribute="trailing" id="oRG-Wg-qkn"/>
                     <constraint firstItem="zol-Yj-LBW" firstAttribute="trailing" secondItem="O3e-C4-dn3" secondAttribute="trailing" id="onz-VO-YsU"/>
                     <constraint firstItem="VOP-NQ-EEw" firstAttribute="top" secondItem="zol-Yj-LBW" secondAttribute="bottom" constant="10" id="p2K-Wn-noR"/>
@@ -146,7 +147,6 @@
                     <constraint firstItem="kqH-dD-R1p" firstAttribute="centerY" secondItem="F4V-xr-Ct5" secondAttribute="centerY" id="qLa-EH-f3b"/>
                     <constraint firstItem="GR7-TW-CgX" firstAttribute="leading" secondItem="KrR-Pm-dNa" secondAttribute="trailing" constant="5" id="sYy-k8-gkQ" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
                     <constraint firstItem="GR7-TW-CgX" firstAttribute="centerY" secondItem="KrR-Pm-dNa" secondAttribute="centerY" id="x7V-V6-EgA"/>
-                    <constraint firstAttribute="topMargin" secondItem="kAV-j8-6kJ" secondAttribute="top" id="yKp-6x-nzw"/>
                     <constraint firstItem="Lpd-Ry-bi4" firstAttribute="leading" secondItem="aCH-2g-idw" secondAttribute="trailing" constant="2" id="yaj-WR-sb8"/>
                 </constraints>
             </tableViewCellContentView>
@@ -155,6 +155,7 @@
                 <outlet property="created" destination="GR7-TW-CgX" id="WSJ-eX-yv5"/>
                 <outlet property="details" destination="O3e-C4-dn3" id="EL7-nd-yPz"/>
                 <outlet property="detailsMarginWidthConstraint" destination="eVI-07-VRY" id="edf-55-lNJ"/>
+                <outlet property="previewImage" destination="kAV-j8-6kJ" id="2Do-QR-gjU"/>
                 <outlet property="previewImageMarginWidthConstraint" destination="Oj3-Yr-Gl0" id="hk9-du-zlB"/>
                 <outlet property="previewImageWidthConstraint" destination="bgu-vA-eu8" id="rR0-8r-QxP"/>
                 <outlet property="stickyIconMarginWidthConstraint" destination="sYy-k8-gkQ" id="nuq-p4-tYj"/>

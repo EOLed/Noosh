@@ -10,7 +10,7 @@ protocol LinkCellViewModel {
 	var title: String { get }
 	var commentCount: String { get }
 	var voteCount: String { get }
-	var previewImageURL: NSURL? { get }
+	var previewImageURL: URL? { get }
 	var previewImageVisible: Bool { get }
 	var stickyIconVisible: Bool { get }
 	var subreddit: String { get }
@@ -25,7 +25,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let title: String
 	let commentCount: String
 	let voteCount: String
-	let previewImageURL: NSURL?
+	let previewImageURL: URL?
 	let moderatorIconVisible: Bool
 	let previewImageVisible: Bool
 	let stickyIconVisible: Bool
@@ -54,7 +54,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		authorFlair: String? = nil,
 		distinguished: Bool,
 		title: String,
-		previewImageURL: NSURL? = nil,
+		previewImageURL: URL? = nil,
 		createdAt: Int,
 		commentCount: String,
 		voteCount: String,
@@ -70,16 +70,15 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.voteCount = voteCount
 		self.previewImageURL = previewImageURL
 		self.createdAt = createdAt
-		self.previewImageVisible = false //previewImageURL != nil
+		self.previewImageVisible = previewImageURL != nil
 		self.stickyIconVisible = stickyIconVisible
 		self.subredditVisible = subredditVisible
 	}
 
 
 	convenience init(link: Link, showSubreddit: Bool) {
-		let previewImageURLString = link.media?.oembed.thumbnailUrl
-		let previewImageURL: NSURL? =
-			previewImageURLString == nil ? nil : NSURL(string: previewImageURLString!)
+		let previewImageURL: URL? = link.thumbnail == "self" || link.thumbnail == "default" ?
+				nil : URL(string: link.thumbnail)
 
 		let prettyNumbers = PrettyNumbers()
 
