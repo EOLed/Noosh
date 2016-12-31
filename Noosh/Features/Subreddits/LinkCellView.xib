@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Post details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-FB-AWc">
-                        <rect key="frame" x="152" y="11" width="141" height="15"/>
+                        <rect key="frame" x="154" y="11" width="139" height="15"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -51,45 +51,45 @@
                             <constraint firstAttribute="height" constant="16" id="npQ-GA-hfN"/>
                         </constraints>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="750" image="StickyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KrR-Pm-dNa" userLabel="Sticky icon">
+                        <rect key="frame" x="137" y="10.5" width="12" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="X0s-kW-xSW" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
+                            <constraint firstAttribute="height" constant="16" id="x5O-27-EUq"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="39 year old Manu Ginobili still has some fight left" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zol-Yj-LBW" userLabel="Link title">
                         <rect key="frame" x="8" y="34" width="285" height="54"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="VOP-NQ-EEw">
-                        <rect key="frame" x="8" y="98" width="10" height="10"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="10" id="Ane-MP-FeI"/>
-                            <constraint firstAttribute="width" constant="10" id="Cbs-wO-cye"/>
-                        </constraints>
-                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vote" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-2g-idw">
-                        <rect key="frame" x="48" y="97" width="12" height="12"/>
+                        <rect key="frame" x="8" y="97" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="FDN-Ft-O3C"/>
                             <constraint firstAttribute="height" constant="12" id="e0i-sY-NT5"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cff-Lj-eAB" userLabel="Comment Count">
-                        <rect key="frame" x="20" y="96" width="8" height="15"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-Ry-bi4" userLabel="Vote Count">
-                        <rect key="frame" x="62" y="96" width="8" height="15"/>
+                        <rect key="frame" x="22" y="96" width="8" height="15"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="750" image="StickyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KrR-Pm-dNa" userLabel="Sticky icon">
-                        <rect key="frame" x="137" y="10.5" width="10" height="16"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="VOP-NQ-EEw">
+                        <rect key="frame" x="80" y="98" width="10" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="10" id="X0s-kW-xSW" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
-                            <constraint firstAttribute="height" constant="16" id="x5O-27-EUq"/>
+                            <constraint firstAttribute="height" constant="10" id="Ane-MP-FeI"/>
+                            <constraint firstAttribute="width" constant="10" id="Cbs-wO-cye"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cff-Lj-eAB" userLabel="Comment Count">
+                        <rect key="frame" x="92" y="96" width="8" height="15"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lpd-Ry-bi4" firstAttribute="centerY" secondItem="Cff-Lj-eAB" secondAttribute="centerY" id="4OZ-yE-xq3"/>
@@ -97,12 +97,12 @@
                     <constraint firstItem="oKZ-Z6-aMY" firstAttribute="leading" secondItem="tPX-Ne-ElD" secondAttribute="trailing" constant="5" id="DyQ-gn-YJU"/>
                     <constraint firstItem="Cff-Lj-eAB" firstAttribute="centerY" secondItem="VOP-NQ-EEw" secondAttribute="centerY" id="G6O-xG-4tW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kAV-j8-6kJ" secondAttribute="trailing" id="Gve-Dx-QNu"/>
+                    <constraint firstItem="aCH-2g-idw" firstAttribute="leading" secondItem="Ccl-UL-Srt" secondAttribute="leadingMargin" id="IHB-js-jit"/>
                     <constraint firstItem="Yao-lN-jdk" firstAttribute="centerY" secondItem="tPX-Ne-ElD" secondAttribute="centerY" id="J1N-du-UJt"/>
                     <constraint firstItem="KrR-Pm-dNa" firstAttribute="centerY" secondItem="tPX-Ne-ElD" secondAttribute="centerY" id="JOp-jC-BAv"/>
                     <constraint firstItem="zol-Yj-LBW" firstAttribute="top" secondItem="tPX-Ne-ElD" secondAttribute="bottom" constant="5" id="L9Q-wW-Bq3"/>
-                    <constraint firstItem="VOP-NQ-EEw" firstAttribute="leading" secondItem="zol-Yj-LBW" secondAttribute="leading" id="Nmm-B7-CR7"/>
                     <constraint firstItem="lhy-FB-AWc" firstAttribute="leading" secondItem="KrR-Pm-dNa" secondAttribute="trailing" constant="5" id="P7U-4K-D9w" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
-                    <constraint firstItem="aCH-2g-idw" firstAttribute="leading" secondItem="Cff-Lj-eAB" secondAttribute="trailing" constant="20" id="T0p-1L-cyl"/>
+                    <constraint firstItem="VOP-NQ-EEw" firstAttribute="leading" secondItem="aCH-2g-idw" secondAttribute="trailing" constant="60" id="W3Q-hO-HPl"/>
                     <constraint firstItem="zol-Yj-LBW" firstAttribute="leading" secondItem="tPX-Ne-ElD" secondAttribute="leading" id="XjY-Nu-3ch"/>
                     <constraint firstItem="KrR-Pm-dNa" firstAttribute="leading" secondItem="Yao-lN-jdk" secondAttribute="trailing" constant="5" id="cL9-h4-ULv" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
                     <constraint firstAttribute="bottomMargin" secondItem="VOP-NQ-EEw" secondAttribute="bottom" id="cLD-j3-0aq"/>
