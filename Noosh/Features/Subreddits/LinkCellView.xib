@@ -45,13 +45,6 @@
                             <constraint firstAttribute="height" constant="12" id="e0i-sY-NT5"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Domain" translatesAutoresizingMaskIntoConstraints="NO" id="ChS-dz-gKO">
-                        <rect key="frame" x="112" y="96" width="12" height="12"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="12" id="B0d-nj-3cI"/>
-                            <constraint firstAttribute="width" constant="12" id="CAO-XS-PqQ" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cff-Lj-eAB" userLabel="Comment Count">
                         <rect key="frame" x="74" y="95" width="8" height="15"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -122,12 +115,6 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="domain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSQ-hS-Hhg">
-                        <rect key="frame" x="127" y="95" width="171" height="14"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lpd-Ry-bi4" firstAttribute="centerY" secondItem="Cff-Lj-eAB" secondAttribute="centerY" id="4OZ-yE-xq3"/>
@@ -136,9 +123,7 @@
                     <constraint firstItem="zol-Yj-LBW" firstAttribute="leading" secondItem="Ccl-UL-Srt" secondAttribute="leadingMargin" id="67h-Ub-NXW"/>
                     <constraint firstItem="HJz-6D-yvp" firstAttribute="leading" secondItem="eGS-hx-DFB" secondAttribute="trailing" id="7c3-9b-N1z"/>
                     <constraint firstAttribute="leadingMargin" secondItem="KrR-Pm-dNa" secondAttribute="leading" id="8gf-NE-fhq"/>
-                    <constraint firstItem="QSQ-hS-Hhg" firstAttribute="trailing" secondItem="zol-Yj-LBW" secondAttribute="trailing" id="BPF-2r-J4G"/>
                     <constraint firstItem="4GE-mP-o3U" firstAttribute="centerY" secondItem="GR7-TW-CgX" secondAttribute="centerY" id="CNb-01-mpG"/>
-                    <constraint firstItem="QSQ-hS-Hhg" firstAttribute="leading" secondItem="ChS-dz-gKO" secondAttribute="trailing" constant="3" id="EQE-Sc-Ocz"/>
                     <constraint firstItem="Cff-Lj-eAB" firstAttribute="centerY" secondItem="VOP-NQ-EEw" secondAttribute="centerY" id="G6O-xG-4tW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kAV-j8-6kJ" secondAttribute="trailing" id="Gve-Dx-QNu"/>
                     <constraint firstItem="aCH-2g-idw" firstAttribute="leading" secondItem="Ccl-UL-Srt" secondAttribute="leadingMargin" id="IHB-js-jit"/>
@@ -146,13 +131,11 @@
                     <constraint firstItem="kAV-j8-6kJ" firstAttribute="leading" secondItem="O3e-C4-dn3" secondAttribute="trailing" constant="5" id="Oj3-Yr-Gl0" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
                     <constraint firstItem="F4V-xr-Ct5" firstAttribute="centerY" secondItem="KrR-Pm-dNa" secondAttribute="centerY" id="Pgm-28-6b0"/>
                     <constraint firstItem="4GE-mP-o3U" firstAttribute="leading" secondItem="HJz-6D-yvp" secondAttribute="trailing" id="Q35-Ls-nna"/>
-                    <constraint firstItem="ChS-dz-gKO" firstAttribute="leading" secondItem="Cff-Lj-eAB" secondAttribute="trailing" constant="30" id="SE7-AU-87V"/>
                     <constraint firstItem="F4V-xr-Ct5" firstAttribute="leading" secondItem="GR7-TW-CgX" secondAttribute="trailing" id="ZxZ-tG-d0A"/>
                     <constraint firstItem="O3e-C4-dn3" firstAttribute="leading" secondItem="kqH-dD-R1p" secondAttribute="trailing" id="c2D-UG-s6d"/>
                     <constraint firstAttribute="bottomMargin" secondItem="VOP-NQ-EEw" secondAttribute="bottom" id="cLD-j3-0aq"/>
                     <constraint firstItem="Cff-Lj-eAB" firstAttribute="leading" secondItem="VOP-NQ-EEw" secondAttribute="trailing" constant="2" id="cU9-vt-6NX"/>
                     <constraint firstItem="HJz-6D-yvp" firstAttribute="centerY" secondItem="F4V-xr-Ct5" secondAttribute="centerY" id="dG7-3L-o68"/>
-                    <constraint firstItem="ChS-dz-gKO" firstAttribute="centerY" secondItem="VOP-NQ-EEw" secondAttribute="centerY" id="gLZ-l6-1JU"/>
                     <constraint firstAttribute="topMargin" secondItem="kAV-j8-6kJ" secondAttribute="top" constant="2" id="kOj-MU-dcy"/>
                     <constraint firstItem="KrR-Pm-dNa" firstAttribute="top" secondItem="Ccl-UL-Srt" secondAttribute="topMargin" id="nJO-YL-o6G"/>
                     <constraint firstItem="zol-Yj-LBW" firstAttribute="top" secondItem="GR7-TW-CgX" secondAttribute="bottom" constant="6" id="oF9-0U-hzS"/>
@@ -164,7 +147,6 @@
                     <constraint firstItem="kqH-dD-R1p" firstAttribute="centerY" secondItem="F4V-xr-Ct5" secondAttribute="centerY" id="qLa-EH-f3b"/>
                     <constraint firstItem="GR7-TW-CgX" firstAttribute="leading" secondItem="KrR-Pm-dNa" secondAttribute="trailing" constant="5" id="sYy-k8-gkQ" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
                     <constraint firstItem="GR7-TW-CgX" firstAttribute="centerY" secondItem="KrR-Pm-dNa" secondAttribute="centerY" id="x7V-V6-EgA"/>
-                    <constraint firstItem="QSQ-hS-Hhg" firstAttribute="centerY" secondItem="ChS-dz-gKO" secondAttribute="centerY" id="ySi-PL-O8X"/>
                     <constraint firstItem="Lpd-Ry-bi4" firstAttribute="leading" secondItem="aCH-2g-idw" secondAttribute="trailing" constant="2" id="yaj-WR-sb8"/>
                 </constraints>
             </tableViewCellContentView>
@@ -173,8 +155,6 @@
                 <outlet property="created" destination="GR7-TW-CgX" id="WSJ-eX-yv5"/>
                 <outlet property="details" destination="O3e-C4-dn3" id="EL7-nd-yPz"/>
                 <outlet property="detailsMarginWidthConstraint" destination="eVI-07-VRY" id="edf-55-lNJ"/>
-                <outlet property="domain" destination="QSQ-hS-Hhg" id="qzw-aU-Uc7"/>
-                <outlet property="domainIconWidthConstraint" destination="CAO-XS-PqQ" id="6zZ-Ve-t0Q"/>
                 <outlet property="previewImage" destination="kAV-j8-6kJ" id="2Do-QR-gjU"/>
                 <outlet property="previewImageMarginWidthConstraint" destination="Oj3-Yr-Gl0" id="hk9-du-zlB"/>
                 <outlet property="previewImageWidthConstraint" destination="bgu-vA-eu8" id="rR0-8r-QxP"/>
@@ -191,7 +171,6 @@
     </objects>
     <resources>
         <image name="Comment" width="16" height="16"/>
-        <image name="Domain" width="16" height="16"/>
         <image name="StickyIcon" width="16" height="16"/>
         <image name="Vote" width="16" height="16"/>
     </resources>

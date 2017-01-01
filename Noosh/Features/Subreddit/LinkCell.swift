@@ -19,8 +19,6 @@ class LinkCell: UITableViewCell {
 	@IBOutlet private weak var subredditMarginWidthConstraint: CollapsibleConstraint!
 	@IBOutlet private weak var detailsMarginWidthConstraint: CollapsibleConstraint!
 	@IBOutlet private weak var previewImage: UIImageView!
-	@IBOutlet private weak var domain: UILabel!
-	@IBOutlet weak var domainIconWidthConstraint: CollapsibleConstraint!
 
 	func update(link: LinkCellViewModel) {
 		username.text = link.username
@@ -46,12 +44,5 @@ class LinkCell: UITableViewCell {
 			previewImage.af_setImage(withURL: previewImageURL)
 			previewImage.layer.cornerRadius = 5
 		}
-
-		if let linkDomain = link.domain {
-			domain.text = linkDomain
-		}
-
-		domain.isHidden = !link.domainVisible
-		domainIconWidthConstraint.toggle(show: link.domainVisible)
 	}
 }
