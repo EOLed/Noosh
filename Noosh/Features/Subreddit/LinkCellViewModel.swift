@@ -16,6 +16,8 @@ protocol LinkCellViewModel {
 	var subreddit: String { get }
 	var detailsVisible: Bool { get }
 	var subredditVisible: Bool { get }
+	var domain: String? { get }
+	var domainVisible: Bool { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -31,6 +33,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let stickyIconVisible: Bool
 	let subreddit: String
 	let subredditVisible: Bool
+	let domain: String?
 
 	private let createdAt: Int
 
@@ -48,13 +51,24 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		}
 	}
 
+    var domainVisible: Bool {
+			guard let domain = self.domain else { return false }
+
+			if domain.hasPrefix("self.") || domain == "reddit.com" {
+				return false
+			}
+
+			return true
+    }
+
 	init(
 		subreddit: String,
 		username: String,
-		authorFlair: String? = nil,
-		distinguished: Bool,
+		authorFlair: String?,
+		moderatorIconVisible: Bool,
 		title: String,
-		previewImageURL: URL? = nil,
+		previewImageURL: URL?,
+		domain: String?,
 		createdAt: Int,
 		commentCount: String,
 		voteCount: String,
@@ -64,7 +78,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.subreddit = subreddit
 		self.username = username
 		self.authorFlair = authorFlair
-		self.moderatorIconVisible = distinguished
+		self.moderatorIconVisible = moderatorIconVisible
 		self.title = title
 		self.commentCount = commentCount
 		self.voteCount = voteCount
@@ -73,8 +87,8 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.previewImageVisible = previewImageURL != nil
 		self.stickyIconVisible = stickyIconVisible
 		self.subredditVisible = subredditVisible
+		self.domain = domain
 	}
-
 
 	convenience init(link: Link, showSubreddit: Bool) {
 		let previewImageURL: URL? = link.thumbnail == "self" || link.thumbnail == "default" ?
@@ -86,9 +100,10 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 			subreddit: "r/\(link.subreddit)",
 			username: link.author,
 			authorFlair: link.authorFlairText,
-			distinguished: link.distinguished,
+			moderatorIconVisible: link.distinguished,
 			title: link.title,
 			previewImageURL: previewImageURL,
+			domain: link.domain,
 			createdAt: link.createdUtc,
 			commentCount: prettyNumbers.commentCount(link.numComments),
 			voteCount: prettyNumbers.voteCount(link.ups - link.downs),

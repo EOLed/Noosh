@@ -5,7 +5,6 @@ import RxSwift
 import reddift
 import RxTest
 
-
 @testable import Noosh
 
 class SubredditsViewModelImplSpec: QuickSpec {
