@@ -51,15 +51,15 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		}
 	}
 
-    var domainVisible: Bool {
-			guard let domain = self.domain else { return false }
+	var domainVisible: Bool {
+		guard let domain = self.domain else { return false }
 
-			if domain.hasPrefix("self.") || domain == "reddit.com" {
-				return false
-			}
+		if domain.hasPrefix("self.") || domain == "reddit.com" {
+			return false
+		}
 
-			return true
-    }
+		return true
+	}
 
 	init(
 		subreddit: String,
@@ -113,6 +113,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	}
 
 	private func buildDetails() -> String? {
-		return authorFlair
+		guard let domain = self.domain else { return nil }
+		return domainVisible ? domain : nil
 	}
 }
