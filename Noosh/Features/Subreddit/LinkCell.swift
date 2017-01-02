@@ -33,6 +33,8 @@ class LinkCell: UITableViewCell {
 
 		detailsMarginWidthConstraint.toggle(show: link.detailsVisible)
 
+		created.text = link.createdAt
+
 		if link.subredditVisible {
 			subreddit.text = link.subreddit
 		} else {

@@ -18,6 +18,7 @@ protocol LinkCellViewModel {
 	var subredditVisible: Bool { get }
 	var domain: String? { get }
 	var domainVisible: Bool { get }
+	var createdAt: String { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -34,8 +35,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let subreddit: String
 	let subredditVisible: Bool
 	let domain: String?
-
-	private let createdAt: Int
+	let createdAt: String
 
 	var details: String? {
 		get { return buildDetails() }
@@ -69,7 +69,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		title: String,
 		previewImageURL: URL?,
 		domain: String?,
-		createdAt: Int,
+		createdAt: String,
 		commentCount: String,
 		voteCount: String,
 		stickyIconVisible: Bool,
@@ -90,11 +90,13 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.domain = domain
 	}
 
-	convenience init(link: Link, showSubreddit: Bool) {
+	convenience init(
+		link: Link,
+		showSubreddit: Bool,
+		prettyNumbers: PrettyNumbers = PrettyNumbers(dateProvider: DateProviderImpl())
+	) {
 		let previewImageURL: URL? = link.thumbnail == "self" || link.thumbnail == "default" ?
 				nil : URL(string: link.thumbnail)
-
-		let prettyNumbers = PrettyNumbers()
 
 		self.init(
 			subreddit: "r/\(link.subreddit)",
@@ -104,7 +106,7 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 			title: link.title,
 			previewImageURL: previewImageURL,
 			domain: link.domain,
-			createdAt: link.createdUtc,
+			createdAt: prettyNumbers.timeAgo(epochUtc: link.createdUtc),
 			commentCount: prettyNumbers.commentCount(link.numComments),
 			voteCount: prettyNumbers.voteCount(link.ups - link.downs),
 			stickyIconVisible: link.stickied,

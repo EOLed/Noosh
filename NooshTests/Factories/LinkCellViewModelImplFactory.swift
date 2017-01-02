@@ -26,7 +26,7 @@ class LinkCellViewModelImplFactory {
 		.commentCount: String(Randoms.randomInt(0, 20000)),
 		.voteCount: String(Randoms.randomInt(0, 20000)),
 		.moderatorIconVisible: Randoms.randomBool(),
-		.createdAt: Int(Randoms.randomDate().timeIntervalSince1970),
+		.createdAt: String(Int(Randoms.randomDate().timeIntervalSince1970)),
 		.stickyIconVisible: Randoms.randomBool(),
 		.subredditVisible: Randoms.randomBool(),
 		.subreddit: Randoms.randomFakeTag()
@@ -42,7 +42,7 @@ class LinkCellViewModelImplFactory {
 			title: allAttributes[.title] as! String,
 			previewImageURL: toOptional(allAttributes[.previewImageURL]),
 			domain: allAttributes[.domain] as! String,
-			createdAt: allAttributes[.createdAt] as! Int,
+			createdAt: allAttributes[.createdAt] as! String,
 			commentCount: allAttributes[.commentCount] as! String,
 			voteCount: allAttributes[.voteCount] as! String,
 			stickyIconVisible: allAttributes[.stickyIconVisible] as! Bool,

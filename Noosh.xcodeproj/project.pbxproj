@@ -39,6 +39,8 @@
 		8C9BCEBF1E0E2FE500A2F50E /* SubredditsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEBE1E0E2FE500A2F50E /* SubredditsEndpoint.swift */; };
 		8C9BCEC21E0EEF4B00A2F50E /* SubredditsEndpointSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BCEC11E0EEF4B00A2F50E /* SubredditsEndpointSpec.swift */; };
 		8C9BCEC71E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BCEC61E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json */; };
+		8CBD8C111E19D48A00DEB8C8 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */; };
+		8CBD8C131E19D51300DEB8C8 /* TestDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */; };
 		8CFFB0AD1E0DD8B8009FCF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */; };
 		8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */; };
 		906353EDFD28585B7A0EDFCD /* Pods_NooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */; };
@@ -90,6 +92,8 @@
 		8C9BCEBE1E0E2FE500A2F50E /* SubredditsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsEndpoint.swift; path = API/SubredditsEndpoint.swift; sourceTree = "<group>"; };
 		8C9BCEC11E0EEF4B00A2F50E /* SubredditsEndpointSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubredditsEndpointSpec.swift; path = API/SubredditsEndpointSpec.swift; sourceTree = "<group>"; };
 		8C9BCEC61E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SubredditsEndpointSpec_default_subreddits.json; path = Fixtures/OHHTTPStubs/API/SubredditsEndpointSpec_default_subreddits.json; sourceTree = "<group>"; };
+		8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateProvider.swift; path = Core/DateProvider.swift; sourceTree = "<group>"; };
+		8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDateProvider.swift; path = Core/TestDateProvider.swift; sourceTree = "<group>"; };
 		8CFFB0A91E0DD8B8009FCF5B /* Noosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			children = (
 				8C1ECF951E17405C0096F320 /* CollapsibleConstraint.swift */,
 				8C1ECFAD1E1779E10096F320 /* Coordinator.swift */,
+				8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */,
 				8C1ECFAF1E178E960096F320 /* PrettyNumbers.swift */,
 			);
 			name = Core;
@@ -185,6 +190,7 @@
 			children = (
 				8C1ECFB21E178EF00096F320 /* PrettyNumbersSpec.swift */,
 				8C1ECFB71E18728C0096F320 /* Dictionary+merge.swift */,
+				8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				8C1ECF961E17405C0096F320 /* CollapsibleConstraint.swift in Sources */,
 				8C1ECF9B1E1743E10096F320 /* SubredditEndpoint.swift in Sources */,
 				8CFFB0AD1E0DD8B8009FCF5B /* AppDelegate.swift in Sources */,
+				8CBD8C111E19D48A00DEB8C8 /* DateProvider.swift in Sources */,
 				8C9BCEBB1E0DE0DB00A2F50E /* SubredditsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +586,7 @@
 			files = (
 				8C1ECF8F1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift in Sources */,
 				8C1ECFB31E178EF00096F320 /* PrettyNumbersSpec.swift in Sources */,
+				8CBD8C131E19D51300DEB8C8 /* TestDateProvider.swift in Sources */,
 				8C1ECFA61E175BFC0096F320 /* LinkCellViewModelImplSpec.swift in Sources */,
 				8C1ECFB61E186E800096F320 /* LinkCellViewModelImplFactory.swift in Sources */,
 				8C1ECFB81E18728C0096F320 /* Dictionary+merge.swift in Sources */,
