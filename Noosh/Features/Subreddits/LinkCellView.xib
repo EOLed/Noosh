@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kAV-j8-6kJ" userLabel="Link Preview">
-                        <rect key="frame" x="303" y="6" width="64" height="64"/>
+                        <rect key="frame" x="303" y="8" width="64" height="64"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="64" id="TLg-Ie-uC6"/>
                             <constraint firstAttribute="width" constant="64" id="bgu-vA-eu8" customClass="CollapsibleConstraint" customModule="Noosh" customModuleProvider="target"/>
@@ -110,7 +110,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3e-C4-dn3">
-                        <rect key="frame" x="195" y="9" width="103" height="14"/>
+                        <rect key="frame" x="195" y="9.5" width="103" height="13.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="VOP-NQ-EEw" secondAttribute="bottom" id="cLD-j3-0aq"/>
                     <constraint firstItem="Cff-Lj-eAB" firstAttribute="leading" secondItem="VOP-NQ-EEw" secondAttribute="trailing" constant="2" id="cU9-vt-6NX"/>
                     <constraint firstItem="HJz-6D-yvp" firstAttribute="centerY" secondItem="F4V-xr-Ct5" secondAttribute="centerY" id="dG7-3L-o68"/>
-                    <constraint firstAttribute="topMargin" secondItem="kAV-j8-6kJ" secondAttribute="top" constant="2" id="kOj-MU-dcy"/>
+                    <constraint firstItem="kAV-j8-6kJ" firstAttribute="top" secondItem="Ccl-UL-Srt" secondAttribute="topMargin" id="kOj-MU-dcy"/>
                     <constraint firstItem="KrR-Pm-dNa" firstAttribute="top" secondItem="Ccl-UL-Srt" secondAttribute="topMargin" id="nJO-YL-o6G"/>
                     <constraint firstItem="zol-Yj-LBW" firstAttribute="top" secondItem="GR7-TW-CgX" secondAttribute="bottom" constant="6" id="oF9-0U-hzS"/>
                     <constraint firstItem="kqH-dD-R1p" firstAttribute="leading" secondItem="4GE-mP-o3U" secondAttribute="trailing" id="oRG-Wg-qkn"/>
