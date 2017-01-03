@@ -24,7 +24,11 @@ class SubredditsViewModelImpl: SubredditsViewModel {
 		return subreddits
 			.sorted(by: sortSubreddits)
 			.flatMap {
-				SubredditCellViewModelImpl(name: $0.displayName, iconURL: URL(string: $0.iconImg))
+				SubredditCellViewModelImpl(
+					name: $0.displayName,
+					iconURL: URL(string: $0.iconImg),
+					showMedia: true
+				)
 			}
 	}
 

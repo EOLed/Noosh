@@ -15,7 +15,7 @@ class SubreddditCoordinator: Coordinator {
 		self.session = session
 	}
 
-	func start(subreddit: String) {
+	func start(subreddit: String, showMedia: Bool) {
 		let links: Observable<[LinkCellViewModel]> = endpoint
 			.getListing(
 				paginator: Paginator(),
@@ -25,7 +25,7 @@ class SubreddditCoordinator: Coordinator {
 			)
 			.observeOn(MainScheduler.instance)
 			.flatMap { Observable.of($0.children.flatMap { $0 as? Link }) }
-			.flatMap { Observable.of($0.map { LinkCellViewModelImpl(link: $0, showSubreddit: false) }) }
+			.flatMap { Observable.of($0.map { LinkCellViewModelImpl(link: $0, showSubreddit: false, showMedia: showMedia) }) }
 
 		let subredditController = SubredditViewController(title: subreddit, links: links)
 		self.subredditController = subredditController

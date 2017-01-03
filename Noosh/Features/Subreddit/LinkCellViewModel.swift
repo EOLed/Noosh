@@ -1,5 +1,6 @@
 import Foundation
 import reddift
+import Rswift
 
 protocol LinkCellViewModel {
 	var username: String { get }
@@ -11,7 +12,7 @@ protocol LinkCellViewModel {
 	var commentCount: String { get }
 	var voteCount: String { get }
 	var previewImageURL: URL? { get }
-	var previewImageVisible: Bool { get }
+	var previewVisible: Bool { get }
 	var stickyIconVisible: Bool { get }
 	var subreddit: String { get }
 	var detailsVisible: Bool { get }
@@ -19,6 +20,7 @@ protocol LinkCellViewModel {
 	var domain: String? { get }
 	var domainVisible: Bool { get }
 	var createdAt: String { get }
+	var defaultPreview: ImageResource { get }
 }
 
 class LinkCellViewModelImpl: LinkCellViewModel {
@@ -30,12 +32,13 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 	let voteCount: String
 	let previewImageURL: URL?
 	let moderatorIconVisible: Bool
-	let previewImageVisible: Bool
+	let previewVisible: Bool
 	let stickyIconVisible: Bool
 	let subreddit: String
 	let subredditVisible: Bool
 	let domain: String?
 	let createdAt: String
+	let defaultPreview: ImageResource
 
 	var details: String? {
 		get { return buildDetails() }
@@ -73,7 +76,9 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		commentCount: String,
 		voteCount: String,
 		stickyIconVisible: Bool,
-		subredditVisible: Bool
+		subredditVisible: Bool,
+		defaultPreview: ImageResource,
+		previewVisible: Bool
 	) {
 		self.subreddit = subreddit
 		self.username = username
@@ -84,19 +89,24 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 		self.voteCount = voteCount
 		self.previewImageURL = previewImageURL
 		self.createdAt = createdAt
-		self.previewImageVisible = previewImageURL != nil
+		self.previewVisible = previewVisible
 		self.stickyIconVisible = stickyIconVisible
 		self.subredditVisible = subredditVisible
 		self.domain = domain
+		self.defaultPreview = defaultPreview
 	}
 
 	convenience init(
 		link: Link,
 		showSubreddit: Bool,
+		showMedia: Bool,
 		prettyNumbers: PrettyNumbers = PrettyNumbers(dateProvider: DateProviderImpl())
 	) {
 		let previewImageURL: URL? = link.thumbnail == "self" || link.thumbnail == "default" ?
 				nil : URL(string: link.thumbnail)
+
+		let defaultPreview =
+			link.thumbnail == "default" ? R.image.linkTypeExternal : R.image.linkTypePost
 
 		self.init(
 			subreddit: "r/\(link.subreddit)",
@@ -110,7 +120,9 @@ class LinkCellViewModelImpl: LinkCellViewModel {
 			commentCount: prettyNumbers.commentCount(link.numComments),
 			voteCount: prettyNumbers.voteCount(link.ups - link.downs),
 			stickyIconVisible: link.stickied,
-			subredditVisible: showSubreddit
+			subredditVisible: showSubreddit,
+			defaultPreview: defaultPreview,
+			previewVisible: showMedia
 		)
 	}
 

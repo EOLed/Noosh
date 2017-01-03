@@ -2,6 +2,7 @@ import Foundation
 import Quick
 import Nimble
 import reddift
+import Rswift
 
 @testable import Noosh
 
@@ -85,6 +86,10 @@ class LinkCellViewModelImplSpec: QuickSpec {
 				it("does not create a preview URL") {
 					expect(subject.previewImageURL).to(beNil())
 				}
+
+				it("creates a defaultPreview image of a link") {
+					expect(subject.defaultPreview.name).to(equal(R.image.linkTypeExternal.name))
+				}
 			}
 
 			context("with a self thumbnail") {
@@ -98,6 +103,10 @@ class LinkCellViewModelImplSpec: QuickSpec {
 
 				it("does not create a preview URL") {
 					expect(subject.previewImageURL).to(beNil())
+				}
+
+				it("creates a defaultPreview image of a self post") {
+					expect(subject.defaultPreview.name).to(equal(R.image.linkTypePost.name))
 				}
 			}
 
