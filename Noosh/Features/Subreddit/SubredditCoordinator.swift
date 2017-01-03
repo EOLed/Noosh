@@ -3,11 +3,12 @@ import UIKit
 import reddift
 import RxSwift
 
-class SubreddditCoordinator: Coordinator {
-	private let navigationController: UINavigationController
-	private let session: Session
+class SubredditCoordinator: Coordinator {
+	fileprivate let navigationController: UINavigationController
+	fileprivate let session: Session
 	private let endpoint: SubredditEndpoint
 	private var subredditController: SubredditViewController?
+	fileprivate var linkDetailCoordinator: LinkDetailCoordinator?
 
 	init(navigationController: UINavigationController, session: Session) {
 		self.navigationController = navigationController
@@ -27,7 +28,8 @@ class SubreddditCoordinator: Coordinator {
 			.flatMap { Observable.of($0.children.flatMap { $0 as? Link }) }
 			.flatMap { Observable.of($0.map { LinkCellViewModelImpl(link: $0, showSubreddit: false, showMedia: showMedia) }) }
 
-		let subredditController = SubredditViewController(title: subreddit, links: links)
+		let subredditController =
+			SubredditViewController(title: subreddit, links: links, delegate: self)
 		self.subredditController = subredditController
 
 		navigationController.pushViewController(subredditController, animated: true)
@@ -35,6 +37,17 @@ class SubreddditCoordinator: Coordinator {
 
 	deinit {
 		print("deinit SubredditCoordinator")
+	}
+}
+
+extension SubredditCoordinator: SubredditViewControllerDelegate {
+	func didSelectLink(link: LinkCellViewModel) {
+		let linkDetailCoordinator =
+			LinkDetailCoordinator(navigationController: navigationController, session: session)
+
+		self.linkDetailCoordinator = linkDetailCoordinator
+
+		linkDetailCoordinator.start(link: link)
 	}
 }
 

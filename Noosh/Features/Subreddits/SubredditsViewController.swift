@@ -18,7 +18,7 @@ class SubredditsViewController: UIViewController {
 	init(
 		title: String,
 		subreddits: SubredditsViewModel,
-		delegate: SubredditsViewControllerDelegate?
+		delegate: SubredditsViewControllerDelegate
 	) {
 		self.subreddits = subreddits
 		self.disposeBag = DisposeBag()
