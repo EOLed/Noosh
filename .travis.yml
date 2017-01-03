@@ -12,5 +12,4 @@ before_script:
   - instruments -s devices
 script:
   - xcodebuild -workspace Noosh.xcworkspace -scheme Noosh build-for-testing > /dev/null
-  - xctool -workspace Noosh.xcworkspace -scheme Noosh run-tests -test-sdk iphonesimulator10.2
-
+  - xcodebuild -workspace Noosh.xcworkspace -scheme $SCHEME -destination "$DESTINATION" -sdk "$SDK" test
