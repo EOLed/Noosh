@@ -5,7 +5,7 @@ import Rswift
 @testable import Noosh
 
 class LinkCellViewModelImplFactory {
-	internal let defaultOptions: [Fields : Any] = [
+	let defaultOptions: [Fields : Any] = [
 		.username: Randoms.randomFakeName(),
 		.title: Randoms.randomFakeTitle(),
 		.commentCount: String(Randoms.randomInt(0, 20000)),

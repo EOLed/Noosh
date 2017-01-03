@@ -33,6 +33,7 @@
 		8C55C4B01E1215D00047F4D3 /* SubredditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C55C4AF1E1215D00047F4D3 /* SubredditsView.xib */; };
 		8C55C4B21E1218780047F4D3 /* SubredditCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C55C4B11E1218780047F4D3 /* SubredditCellView.xib */; };
 		8C70EB671E1B99470033607C /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C70EB661E1B99470033607C /* Factory.swift */; };
+		8C70EB6B1E1C181B0033607C /* Factories.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C70EB6A1E1C181B0033607C /* Factories.generated.swift */; };
 		8C815C871E1B4B0300A6B9D4 /* LinkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C815C861E1B4B0300A6B9D4 /* LinkDetailViewModel.swift */; };
 		8C815C8E1E1B5AB300A6B9D4 /* LinkDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C815C8D1E1B5AB300A6B9D4 /* LinkDetailCoordinator.swift */; };
 		8C815C901E1B658300A6B9D4 /* LinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C815C8F1E1B658300A6B9D4 /* LinkDetailViewController.swift */; };
@@ -46,7 +47,6 @@
 		8CBD8C111E19D48A00DEB8C8 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */; };
 		8CBD8C131E19D51300DEB8C8 /* TestDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */; };
 		8CBD8C161E1A154700DEB8C8 /* LinkDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD8C151E1A154700DEB8C8 /* LinkDetailView.xib */; };
-		8CC7F1D21E1B90FE00B79A93 /* Factories.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7F1D11E1B90FE00B79A93 /* Factories.generated.swift */; };
 		8CFFB0AD1E0DD8B8009FCF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */; };
 		8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */; };
 		906353EDFD28585B7A0EDFCD /* Pods_NooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */; };
@@ -92,6 +92,7 @@
 		8C55C4AF1E1215D00047F4D3 /* SubredditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubredditsView.xib; path = Features/Subreddits/SubredditsView.xib; sourceTree = "<group>"; };
 		8C55C4B11E1218780047F4D3 /* SubredditCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubredditCellView.xib; path = Features/Subreddits/SubredditCellView.xib; sourceTree = "<group>"; };
 		8C70EB661E1B99470033607C /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Factory.swift; path = Core/Factory.swift; sourceTree = "<group>"; };
+		8C70EB6A1E1C181B0033607C /* Factories.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Factories.generated.swift; path = SupportFiles/Generated/Factories.generated.swift; sourceTree = "<group>"; };
 		8C815C861E1B4B0300A6B9D4 /* LinkDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkDetailViewModel.swift; path = Features/LinkDetails/LinkDetailViewModel.swift; sourceTree = "<group>"; };
 		8C815C8D1E1B5AB300A6B9D4 /* LinkDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkDetailCoordinator.swift; path = Features/LinkDetails/LinkDetailCoordinator.swift; sourceTree = "<group>"; };
 		8C815C8F1E1B658300A6B9D4 /* LinkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkDetailViewController.swift; path = Features/LinkDetails/LinkDetailViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateProvider.swift; path = Core/DateProvider.swift; sourceTree = "<group>"; };
 		8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDateProvider.swift; path = Core/TestDateProvider.swift; sourceTree = "<group>"; };
 		8CBD8C151E1A154700DEB8C8 /* LinkDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LinkDetailView.xib; path = Features/LinkDetails/LinkDetailView.xib; sourceTree = "<group>"; };
-		8CC7F1D11E1B90FE00B79A93 /* Factories.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Factories.generated.swift; path = Factories/Factories.generated.swift; sourceTree = "<group>"; };
 		8CFFB0A91E0DD8B8009FCF5B /* Noosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,10 +211,25 @@
 		8C1ECFB41E186E630096F320 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				8CC7F1D11E1B90FE00B79A93 /* Factories.generated.swift */,
 				8C1ECFB51E186E800096F320 /* LinkCellViewModelImplFactory.swift */,
 			);
 			name = Factories;
+			sourceTree = "<group>";
+		};
+		8C70EB681E1C17B30033607C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C70EB691E1C18010033607C /* Generated */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		8C70EB691E1C18010033607C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				8C70EB6A1E1C181B0033607C /* Factories.generated.swift */,
+			);
+			name = Generated;
 			sourceTree = "<group>";
 		};
 		8C9BCEAC1E0DDD1000A2F50E /* API */ = {
@@ -340,6 +355,7 @@
 		8CFFB0C01E0DD8B8009FCF5B /* NooshTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C70EB681E1C17B30033607C /* Support Files */,
 				8C9BCEC01E0EEF2600A2F50E /* API */,
 				8C1ECFB11E178EDA0096F320 /* Core */,
 				8C1ECFB41E186E630096F320 /* Factories */,
@@ -562,7 +578,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery \"$SRCROOT/Noosh\" \"$SRCROOT/Templates\" \"$SRCROOT/NooshTests/Factories\"";
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery \"$SRCROOT/Noosh\" \"$SRCROOT/Templates\" \"$SRCROOT/NooshTests/SupportFiles/Generated\"";
 		};
 		B76FA423F9706BD3A94C12B6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -632,7 +648,7 @@
 			files = (
 				8C1ECF8F1E160F8E0096F320 /* SubredditsViewModelImplSpec.swift in Sources */,
 				8C1ECFB31E178EF00096F320 /* PrettyNumbersSpec.swift in Sources */,
-				8CC7F1D21E1B90FE00B79A93 /* Factories.generated.swift in Sources */,
+				8C70EB6B1E1C181B0033607C /* Factories.generated.swift in Sources */,
 				8CBD8C131E19D51300DEB8C8 /* TestDateProvider.swift in Sources */,
 				8C1ECFA61E175BFC0096F320 /* LinkCellViewModelImplSpec.swift in Sources */,
 				8C1ECFB61E186E800096F320 /* LinkCellViewModelImplFactory.swift in Sources */,
