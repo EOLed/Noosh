@@ -11,7 +11,6 @@ target 'Noosh' do
   pod 'RxDataSources', '~> 1.0'
   pod 'RxSwift', '~> 3.0'
   pod 'reddift', '~> 2.0.0'
-  pod 'Sourcery'
 
   target 'NooshTests' do
     inherit! :search_paths
@@ -21,6 +20,7 @@ target 'Noosh' do
     pod 'Quick', '~> 1.0.0'
     pod 'RxBlocking', '~> 3.0'
     pod 'RxTest', '~> 3.0'
+    pod 'Sourcery'
     pod 'SwiftRandom', '~> 1.0'
   end
 end
