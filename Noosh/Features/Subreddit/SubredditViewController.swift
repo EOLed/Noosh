@@ -7,15 +7,20 @@ class SubredditViewController: UIViewController {
 	@IBOutlet private weak var listing: UITableView!
 	private let links: Observable<[LinkCellViewModel]>
 	private let disposeBag: DisposeBag
+	private weak var delegate: SubredditViewControllerDelegate?
 
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("Not supported")
 	}
 
-	init(title: String, links: Observable<[LinkCellViewModel]>) {
+	init(
+		title: String,
+		links: Observable<[LinkCellViewModel]>,
+		delegate: SubredditViewControllerDelegate
+	) {
 		self.links = links
 		self.disposeBag = DisposeBag()
-
+		self.delegate = delegate
 
 		super.init(nibName: R.nib.subredditView.name, bundle: R.nib.subredditView.bundle)
 
@@ -36,7 +41,17 @@ class SubredditViewController: UIViewController {
 			}
 			.addDisposableTo(disposeBag)
 
+		listing.rx.modelSelected(LinkCellViewModel.self)
+			.subscribe(onNext: { [weak self] link in
+				self?.delegate?.didSelectLink(link: link)
+			})
+			.addDisposableTo(disposeBag)
+
 		listing.estimatedRowHeight = 200
 		listing.rowHeight = UITableViewAutomaticDimension
 	}
+}
+
+protocol SubredditViewControllerDelegate: class {
+	func didSelectLink(link: LinkCellViewModel)
 }

@@ -10,7 +10,7 @@ class SubredditsCoordinator: Coordinator {
 	private var subredditsController: SubredditsViewController?
 	fileprivate let session: Session
 
-	fileprivate var subredditCoordinator: SubreddditCoordinator?
+	fileprivate var subredditCoordinator: SubredditCoordinator?
 
 	init(navigationController: UINavigationController, session: Session) {
 		self.navigationController = navigationController
@@ -36,7 +36,8 @@ class SubredditsCoordinator: Coordinator {
 
 extension SubredditsCoordinator: SubredditsViewControllerDelegate {
 	func didSelectSubreddit(subreddit: SubredditCellViewModel) {
-		let subredditCoordinator = SubreddditCoordinator(navigationController: navigationController,	session: session)
+		let subredditCoordinator =
+			SubredditCoordinator(navigationController: navigationController,	session: session)
 
 		self.subredditCoordinator = subredditCoordinator
 

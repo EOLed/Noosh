@@ -58,7 +58,7 @@ class LinkCellViewModelImplSpec: QuickSpec {
 						"num_comments" : 99999 as AnyObject
 					])
 
-					subject = LinkCellViewModelImpl(link: link, showSubreddit: false)
+					subject = LinkCellViewModelImpl(link: link, showSubreddit: false, showMedia: false)
 				}
 
 				it("returns a pretty count of total votes") {
@@ -80,7 +80,7 @@ class LinkCellViewModelImplSpec: QuickSpec {
 						"thumbnail" : "default" as AnyObject
 					])
 
-					subject = LinkCellViewModelImpl(link: link, showSubreddit: false)
+					subject = LinkCellViewModelImpl(link: link, showSubreddit: false, showMedia: false)
 				}
 
 				it("does not create a preview URL") {
@@ -98,7 +98,7 @@ class LinkCellViewModelImplSpec: QuickSpec {
 						"thumbnail" : "self" as AnyObject
 					])
 
-					subject = LinkCellViewModelImpl(link: link, showSubreddit: false)
+					subject = LinkCellViewModelImpl(link: link, showSubreddit: false, showMedia: false)
 				}
 
 				it("does not create a preview URL") {
@@ -116,7 +116,7 @@ class LinkCellViewModelImplSpec: QuickSpec {
 						"thumbnail" : "http://example.com" as AnyObject
 					])
 
-					subject = LinkCellViewModelImpl(link: link, showSubreddit: false)
+					subject = LinkCellViewModelImpl(link: link, showSubreddit: false, showMedia: false)
 				}
 
 				it("does not create a preview URL") {

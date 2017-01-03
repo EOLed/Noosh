@@ -6,20 +6,21 @@ import Rswift
 
 class LinkCellViewModelImplFactory {
 	enum Fields {
-		case username,
-			authorFlair,
-			title,
+		case authorFlair,
+			body,
 			commentCount,
-			voteCount,
-			previewImageURL,
+			createdAt,
+			defaultPreview,
+			domain,
 			moderatorIconVisible,
-			previewImageVisible,
+			previewImageURL,
+			previewVisible,
 			stickyIconVisible,
 			subreddit,
 			subredditVisible,
-			createdAt,
-			defaultPreview,
-			domain;
+			title,
+			username,
+			voteCount;
 	}
 
 	let defaultOptions: [Fields : Any] = [
@@ -32,25 +33,29 @@ class LinkCellViewModelImplFactory {
 		.stickyIconVisible: Randoms.randomBool(),
 		.subredditVisible: Randoms.randomBool(),
 		.subreddit: Randoms.randomFakeTag(),
-		.defaultPreview: R.image.linkTypePost
+		.defaultPreview: R.image.linkTypePost,
+		.previewVisible: Randoms.randomBool()
 	]
 
 	func build(attributes: [Fields : Any]) -> LinkCellViewModelImpl {
 		let allAttributes = attributes.merge(dict: defaultOptions)
+
 		return LinkCellViewModelImpl(
 			subreddit: allAttributes[.subreddit] as! String,
+			subredditVisible: allAttributes[.subredditVisible] as! Bool,
 			username: allAttributes[.username] as! String,
 			authorFlair: toOptional(allAttributes[.authorFlair]),
 			moderatorIconVisible: allAttributes[.moderatorIconVisible] as! Bool,
+			stickyIconVisible: allAttributes[.stickyIconVisible] as! Bool,
 			title: allAttributes[.title] as! String,
+			domain: toOptional(allAttributes[.domain]),
+			previewVisible: allAttributes[.previewVisible] as! Bool,
 			previewImageURL: toOptional(allAttributes[.previewImageURL]),
-			domain: allAttributes[.domain] as! String,
-			createdAt: allAttributes[.createdAt] as! String,
+			defaultPreview: allAttributes[.defaultPreview] as! ImageResource,
+			body: toOptional(allAttributes[.body]),
 			commentCount: allAttributes[.commentCount] as! String,
 			voteCount: allAttributes[.voteCount] as! String,
-			stickyIconVisible: allAttributes[.stickyIconVisible] as! Bool,
-			subredditVisible: allAttributes[.subredditVisible] as! Bool,
-			defaultPreview: allAttributes[.defaultPreview] as! ImageResource
+			createdAt: allAttributes[.createdAt] as! String
 		)
 	}
 
