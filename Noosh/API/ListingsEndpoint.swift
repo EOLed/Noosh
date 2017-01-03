@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import reddift
 
-class SubredditEndpoint {
+class ListingsEndpoint {
 	let session: Session
 
 	init(session: Session) {

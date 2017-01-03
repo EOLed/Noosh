@@ -7,12 +7,12 @@ import OHHTTPStubs
 
 @testable import Noosh
 
-class SubredditEndpointSpec: QuickSpec {
+class ListingsEndpointSpec: QuickSpec {
 	override func spec() {
-		var endpoint: SubredditEndpoint!
+		var endpoint: ListingsEndpoint!
 
 		beforeEach {
-			endpoint = SubredditEndpoint(session: Session())
+			endpoint = ListingsEndpoint(session: Session())
 
 			stub(condition: isMethodGET()) { req in
 				let stubPath = OHPathForFile(
