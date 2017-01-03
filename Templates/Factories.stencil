@@ -1,0 +1,25 @@
+@testable import Noosh
+import Foundation
+import UIKit
+import Rswift
+{% for type in types.implementing.Factory %}
+extension {{ type.name }}Factory {
+  enum Fields {
+    {% for variable in type.variables %}
+      {% if variable.annotations.factoryFields %}case {{ variable.name }}{% endif %}{% endfor %}
+  }
+
+  func build(attributes: [Fields : Any]) -> {{ type.name }} {
+    let allAttributes = attributes.merge(dict: defaultOptions)
+
+    return {{ type.name }}(
+    {% for variable in type.variables %}
+      {% if variable.annotations.factoryFields %}{{ variable.name }}: forceCast(allAttributes[.{{ variable.name }}]){% if not forloop.last%},{% endif %}{% endif %}{% endfor %}
+    )
+  }
+
+  private func forceCast<T>(_ any: Any) -> T {
+    return any as! T
+  }
+}
+{% endfor %}

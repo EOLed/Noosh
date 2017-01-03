@@ -11,6 +11,7 @@ target 'Noosh' do
   pod 'RxDataSources', '~> 1.0'
   pod 'RxSwift', '~> 3.0'
   pod 'reddift', '~> 2.0.0'
+  pod 'Sourcery'
 
   target 'NooshTests' do
     inherit! :search_paths

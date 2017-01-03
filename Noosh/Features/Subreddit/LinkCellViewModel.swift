@@ -24,24 +24,7 @@ protocol LinkCellViewModel {
 	var voteCount: String { get }
 }
 
-struct LinkCellViewModelImpl: LinkCellViewModel {
-	let subreddit: String
-	let subredditVisible: Bool
-	let username: String
-	let authorFlair: String?
-	let adminIconVisible: Bool = false
-	let moderatorIconVisible: Bool
-	let stickyIconVisible: Bool
-	let title: String
-	let domain: String?
-	let previewVisible: Bool
-	let previewImageURL: URL?
-	let defaultPreview: ImageResource
-	let body: String?
-	let commentCount: String
-	let voteCount: String
-	let createdAt: String
-
+struct LinkCellViewModelImpl: LinkCellViewModel, Factory {
 	var details: String? {
 		get { return buildDetails() }
 	}
@@ -65,6 +48,26 @@ struct LinkCellViewModelImpl: LinkCellViewModel {
 
 		return true
 	}
+
+	let adminIconVisible: Bool = false
+
+	/// sourcery:begin: factoryFields
+	let subreddit: String
+	let subredditVisible: Bool
+	let username: String
+	let authorFlair: String?
+	let moderatorIconVisible: Bool
+	let stickyIconVisible: Bool
+	let title: String
+	let domain: String?
+	let previewVisible: Bool
+	let previewImageURL: URL?
+	let defaultPreview: ImageResource
+	let body: String?
+	let commentCount: String
+	let voteCount: String
+	let createdAt: String
+	/// sourcery:end
 
 	private func buildDetails() -> String? {
 		guard let domain = self.domain else { return nil }
