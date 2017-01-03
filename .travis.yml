@@ -1,6 +1,9 @@
 language: objective-c
 osx_image: xcode8.2
+env:
+  - PLATFORM="ios" SCHEME="Noosh" TARGET="NooshTests" DESTINATION="id=DB794781-65A7-4884-8D00-AAC3CBD39A44" SDK="iphonesimulator10.2"
 before_install:
+  - brew update
   - brew install xctool
   - pod repo update > /dev/null
   - pod install
@@ -8,6 +11,6 @@ before_script:
   - xcodebuild -workspace Noosh.xcworkspace -list
   - instruments -s devices
 script:
-  - set -o pipefail
+  - xcodebuild -workspace Noosh.xcworkspace -scheme Noosh build-for-testing > /dev/null
   - xctool -workspace Noosh.xcworkspace -scheme Noosh run-tests -test-sdk iphonesimulator10.2
 
