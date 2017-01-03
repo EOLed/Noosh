@@ -20,6 +20,7 @@ target 'Noosh' do
     pod 'Quick', '~> 1.0.0'
     pod 'RxBlocking', '~> 3.0'
     pod 'RxTest', '~> 3.0'
+    pod 'Sourcery'
     pod 'SwiftRandom', '~> 1.0'
   end
 end
