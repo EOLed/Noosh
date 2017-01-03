@@ -1,5 +1,6 @@
 import Foundation
 import SwiftRandom
+import Rswift
 
 @testable import Noosh
 
@@ -17,6 +18,7 @@ class LinkCellViewModelImplFactory {
 			subreddit,
 			subredditVisible,
 			createdAt,
+			defaultPreview,
 			domain;
 	}
 
@@ -29,7 +31,8 @@ class LinkCellViewModelImplFactory {
 		.createdAt: String(Int(Randoms.randomDate().timeIntervalSince1970)),
 		.stickyIconVisible: Randoms.randomBool(),
 		.subredditVisible: Randoms.randomBool(),
-		.subreddit: Randoms.randomFakeTag()
+		.subreddit: Randoms.randomFakeTag(),
+		.defaultPreview: R.image.linkTypePost
 	]
 
 	func build(attributes: [Fields : Any]) -> LinkCellViewModelImpl {
@@ -46,7 +49,8 @@ class LinkCellViewModelImplFactory {
 			commentCount: allAttributes[.commentCount] as! String,
 			voteCount: allAttributes[.voteCount] as! String,
 			stickyIconVisible: allAttributes[.stickyIconVisible] as! Bool,
-			subredditVisible: allAttributes[.subredditVisible] as! Bool
+			subredditVisible: allAttributes[.subredditVisible] as! Bool,
+			defaultPreview: allAttributes[.defaultPreview] as! ImageResource
 		)
 	}
 

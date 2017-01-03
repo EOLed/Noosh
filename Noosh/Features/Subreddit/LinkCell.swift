@@ -26,8 +26,6 @@ class LinkCell: UITableViewCell {
 		title.text = link.title
 		commentCount.text = String(link.commentCount)
 		voteCount.text = String(link.voteCount)
-		previewImageWidthConstraint.toggle(show: link.previewImageVisible)
-		previewImageMarginWidthConstraint.toggle(show: link.previewImageVisible)
 		stickyIconWidthConstraint.toggle(show: link.stickyIconVisible)
 		stickyIconMarginWidthConstraint.toggle(show: link.stickyIconVisible)
 
@@ -42,9 +40,25 @@ class LinkCell: UITableViewCell {
 			subredditMarginWidthConstraint.collapse()
 		}
 
-		if let previewImageURL = link.previewImageURL, link.previewImageVisible {
+		updatePreviewImage(link: link)
+
+		previewImage.layer.cornerRadius = 5
+	}
+
+	private func updatePreviewImage(link: LinkCellViewModel) {
+		previewImageWidthConstraint.toggle(show: link.previewVisible)
+		previewImageMarginWidthConstraint.toggle(show: link.previewVisible)
+
+		guard link.previewVisible else { return }
+
+		if let previewImageURL = link.previewImageURL {
 			previewImage.af_setImage(withURL: previewImageURL)
-			previewImage.layer.cornerRadius = 5
+		} else {
+			previewImage.image = UIImage(
+				named: link.defaultPreview.name,
+				in: link.defaultPreview.bundle,
+				compatibleWith: nil
+			)
 		}
 	}
 }

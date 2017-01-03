@@ -40,6 +40,6 @@ extension SubredditsCoordinator: SubredditsViewControllerDelegate {
 
 		self.subredditCoordinator = subredditCoordinator
 
-		subredditCoordinator.start(subreddit: subreddit.name)
+		subredditCoordinator.start(subreddit: subreddit.name, showMedia: subreddit.showMedia)
 	}
 }
