@@ -25,6 +25,8 @@ class SubredditViewController: UIViewController {
 		super.init(nibName: R.nib.subredditView.name, bundle: R.nib.subredditView.bundle)
 
 		self.title = title
+		navigationItem.backBarButtonItem =
+			UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 	}
 
 	override func viewDidLoad() {
