@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import reddift
+import RxSwift
 
 class LinkDetailCoordinator: Coordinator {
 	let navigationController: UINavigationController
@@ -11,7 +12,8 @@ class LinkDetailCoordinator: Coordinator {
 	}
 
 	func start(link: LinkCellViewModel) {
-		let controller = LinkDetailViewController(link: LinkDetailViewModelImpl(link: link))
+		let article: Variable<ArticleViewModel> = Variable(ArticleViewModelImpl(link: link))
+		let controller = LinkDetailViewController(link: LinkDetailViewModelImpl(article: article))
 		linkDetailController = controller
 		navigationController.pushViewController(controller, animated: true)
 	}
