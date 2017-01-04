@@ -16,27 +16,17 @@ class ListingsEndpoint {
 		timeFilterWithin: TimeFilterWithin,
 		limit: Int = 25
 	) -> Observable<Listing> {
-		return Observable.create { [weak self] observer in
-			guard let strongSelf = self else {
-				observer.onCompleted()
-				return Disposables.create()
-			}
+		return RxHelper().createObservable { [weak self] resultHandler in
+			guard let strongSelf = self else { return }
 
-			strongSelf.observeThrowable(observer: observer) {
-				try strongSelf.session.getList(
-					paginator,
-					subreddit: subreddit,
-					sort: sort,
-					timeFilterWithin: timeFilterWithin,
-					limit: limit
-				) { result in
-					guard let value = result.value else { return }
-					observer.onNext(value)
-					observer.onCompleted()
-				}
-			}
-
-			return Disposables.create()
+			try strongSelf.session.getList(
+				paginator,
+				subreddit: subreddit,
+				sort: sort,
+				timeFilterWithin: timeFilterWithin,
+				limit: limit,
+				completion: resultHandler
+			)
 		}
 	}
 
@@ -47,37 +37,17 @@ class ListingsEndpoint {
 		depth: Int? = nil,
 		limit: Int? = nil
 	) -> Observable<(Listing, Listing)> {
-		return Observable.create { [weak self] observer in
-			guard let strongSelf = self else {
-				observer.onCompleted()
-				return Disposables.create()
-			}
+		return RxHelper().createObservable { [weak self] resultHandler in
+			guard let strongSelf = self else { return }
 
-			let link = Link(id: linkId)
-
-			strongSelf.observeThrowable(observer: observer) {
-				try strongSelf.session.getArticles(
-					link,
-					sort: sort,
-					comments: commentIds,
-					depth: depth,
-					limit: limit
-				) { result in
-					guard let value = result.value else { return }
-					observer.onNext(value)
-					observer.onCompleted()
-				}
-			}
-
-			return Disposables.create()
-		}
-	}
-
-	private func observeThrowable<T>(observer: AnyObserver<T>, throwable: () throws -> Void) {
-		do {
-			try throwable()
-		} catch {
-			observer.onError(error)
+			try strongSelf.session.getArticles(
+				Link(id: linkId),
+				sort: sort,
+				comments: commentIds,
+				depth: depth,
+				limit: limit,
+				completion: resultHandler
+			)
 		}
 	}
 }
