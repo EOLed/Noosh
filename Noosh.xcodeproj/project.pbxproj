@@ -47,6 +47,8 @@
 		8CBD8C111E19D48A00DEB8C8 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */; };
 		8CBD8C131E19D51300DEB8C8 /* TestDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */; };
 		8CBD8C161E1A154700DEB8C8 /* LinkDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBD8C151E1A154700DEB8C8 /* LinkDetailView.xib */; };
+		8CF658891E1C8BEE0007CC9D /* ListingsEndpointSpec_comments_short.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CF658871E1C8BEE0007CC9D /* ListingsEndpointSpec_comments_short.json */; };
+		8CF6588A1E1C8BEE0007CC9D /* ListingsEndpointSpec_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CF658881E1C8BEE0007CC9D /* ListingsEndpointSpec_comments.json */; };
 		8CFFB0AD1E0DD8B8009FCF5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */; };
 		8CFFB0B41E0DD8B8009FCF5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */; };
 		906353EDFD28585B7A0EDFCD /* Pods_NooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196BC2A17E2CE2E7046EBA49 /* Pods_NooshTests.framework */; };
@@ -106,6 +108,8 @@
 		8CBD8C101E19D48A00DEB8C8 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateProvider.swift; path = Core/DateProvider.swift; sourceTree = "<group>"; };
 		8CBD8C121E19D51300DEB8C8 /* TestDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDateProvider.swift; path = Core/TestDateProvider.swift; sourceTree = "<group>"; };
 		8CBD8C151E1A154700DEB8C8 /* LinkDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LinkDetailView.xib; path = Features/LinkDetails/LinkDetailView.xib; sourceTree = "<group>"; };
+		8CF658871E1C8BEE0007CC9D /* ListingsEndpointSpec_comments_short.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ListingsEndpointSpec_comments_short.json; path = Fixtures/OHHTTPStubs/API/ListingsEndpointSpec_comments_short.json; sourceTree = "<group>"; };
+		8CF658881E1C8BEE0007CC9D /* ListingsEndpointSpec_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ListingsEndpointSpec_comments.json; path = Fixtures/OHHTTPStubs/API/ListingsEndpointSpec_comments.json; sourceTree = "<group>"; };
 		8CFFB0A91E0DD8B8009FCF5B /* Noosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFFB0AC1E0DD8B8009FCF5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CFFB0B31E0DD8B8009FCF5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 		8C9BCEC51E0F1CB100A2F50E /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8CF658871E1C8BEE0007CC9D /* ListingsEndpointSpec_comments_short.json */,
+				8CF658881E1C8BEE0007CC9D /* ListingsEndpointSpec_comments.json */,
 				8C1ECF9C1E1745400096F320 /* SubredditEndpointSpec_nba_subreddit_short.json */,
 				8C1ECF9D1E1745400096F320 /* SubredditEndpointSpec_nba_subreddit.json */,
 				8C55C49E1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json */,
@@ -484,6 +490,8 @@
 			files = (
 				8C55C49F1E1193350047F4D3 /* SubredditsEndpointSpec_default_subreddits_short.json in Resources */,
 				8C9BCEC71E0F1CBD00A2F50E /* SubredditsEndpointSpec_default_subreddits.json in Resources */,
+				8CF6588A1E1C8BEE0007CC9D /* ListingsEndpointSpec_comments.json in Resources */,
+				8CF658891E1C8BEE0007CC9D /* ListingsEndpointSpec_comments_short.json in Resources */,
 				8C1ECF9E1E1745400096F320 /* SubredditEndpointSpec_nba_subreddit_short.json in Resources */,
 				8C1ECF9F1E1745400096F320 /* SubredditEndpointSpec_nba_subreddit.json in Resources */,
 			);

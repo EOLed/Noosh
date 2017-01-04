@@ -40,6 +40,39 @@ class ListingsEndpoint {
 		}
 	}
 
+	func getComments(
+		linkId: String,
+		sort: CommentSort,
+		commentIds: [String]? = nil,
+		depth: Int? = nil,
+		limit: Int? = nil
+	) -> Observable<(Listing, Listing)> {
+		return Observable.create { [weak self] observer in
+			guard let strongSelf = self else {
+				observer.onCompleted()
+				return Disposables.create()
+			}
+
+			let link = Link(id: linkId)
+
+			strongSelf.observeThrowable(observer: observer) {
+				try strongSelf.session.getArticles(
+					link,
+					sort: sort,
+					comments: commentIds,
+					depth: depth,
+					limit: limit
+				) { result in
+					guard let value = result.value else { return }
+					observer.onNext(value)
+					observer.onCompleted()
+				}
+			}
+
+			return Disposables.create()
+		}
+	}
+
 	private func observeThrowable<T>(observer: AnyObserver<T>, throwable: () throws -> Void) {
 		do {
 			try throwable()
