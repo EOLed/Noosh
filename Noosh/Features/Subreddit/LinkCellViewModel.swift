@@ -13,6 +13,7 @@ protocol LinkCellViewModel {
 	var detailsVisible: Bool { get }
 	var domain: String? { get }
 	var domainVisible: Bool { get }
+	var id: String { get }
 	var moderatorIconVisible: Bool { get }
 	var previewImageURL: URL? { get }
 	var previewVisible: Bool { get }
@@ -52,6 +53,7 @@ struct LinkCellViewModelImpl: LinkCellViewModel, Factory {
 	let adminIconVisible: Bool = false
 
 	/// sourcery:begin: factoryFields
+	let id: String
 	let subreddit: String
 	let subredditVisible: Bool
 	let username: String
@@ -90,6 +92,7 @@ extension LinkCellViewModelImpl {
 
 
 		self.init(
+			id: link.id,
 			subreddit: "r/\(link.subreddit)",
 			subredditVisible: showSubreddit,
 			username: link.author,

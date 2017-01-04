@@ -6,14 +6,28 @@ import RxSwift
 class LinkDetailCoordinator: Coordinator {
 	let navigationController: UINavigationController
 	private var linkDetailController: LinkDetailViewController?
+	let listingsEndpoint: ListingsEndpoint
 
 	init(navigationController: UINavigationController, session: Session) {
 		self.navigationController = navigationController
+		self.listingsEndpoint = ListingsEndpoint(session: session)
 	}
 
 	func start(link: LinkCellViewModel) {
 		let article: Variable<ArticleViewModel> = Variable(ArticleViewModelImpl(link: link))
-		let controller = LinkDetailViewController(link: LinkDetailViewModelImpl(article: article))
+		let comments = Variable<[CommentViewModel]>([])
+		let details =
+			LinkDetailViewModelImpl(article: article, comments: CommentsViewModelImpl(comments: comments))
+
+		_ = listingsEndpoint.getComments(linkId: link.id, sort: .hot)
+			.observeOn(MainScheduler.instance)
+			.subscribe(onNext: { (newArticle, comments) in
+				guard let newArticle = newArticle.children.first as? Link else { return }
+				article.value = ArticleViewModelImpl(link: newArticle)
+			})
+
+		let controller = LinkDetailViewController(link: details)
+
 		linkDetailController = controller
 		navigationController.pushViewController(controller, animated: true)
 	}

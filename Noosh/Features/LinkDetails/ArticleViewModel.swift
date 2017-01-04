@@ -35,3 +35,16 @@ extension ArticleViewModelImpl {
 		self.voteCount = link.voteCount
 	}
 }
+
+extension ArticleViewModelImpl {
+	init(link: Link, prettyNumbers: PrettyNumbers = PrettyNumbers(dateProvider: DateProviderImpl())) {
+		self.author = link.author
+		self.authorFlair = link.authorFlairText
+		self.body = link.selftext
+		self.commentCount = prettyNumbers.commentCount(link.numComments)
+		self.createdAt = prettyNumbers.timeAgo(epochUtc: link.createdUtc)
+		self.subreddit = "r/\(link.subreddit)"
+		self.title = link.title
+		self.voteCount = prettyNumbers.voteCount(link.ups - link.downs)
+	}
+}
