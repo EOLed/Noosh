@@ -8,31 +8,30 @@ class CommentHelper {
 		self.prettyNumbers = prettyNumbers
 	}
 
-	func toViewModels(comment: Comment, replyLevels: [String : Int]? = nil) -> [CommentViewModel] {
-		let replyLevels = replyLevels ?? self.replyLevels(comment: comment, levels: [:])
+	func toViewModels(comment: Comment, replyLevels: ReplyLevels? = nil) -> [CommentViewModel] {
+		let replyLevels = replyLevels ?? buildReplyLevels(comment: comment)
 		guard let replyLevel = replyLevels[comment.id] else { return [] }
 
 		var comments = [toViewModel(comment: comment, replyLevel: replyLevel)]
-		let replies =
-			(comment.replies.children as? [Comment] ?? []).flatMap {
-				toViewModels(comment: $0, replyLevels: replyLevels)
-			}
+		let replies = (comment.replies.children as? [Comment] ?? []).flatMap {
+			toViewModels(comment: $0, replyLevels: replyLevels)
+		}
 
 		comments.append(contentsOf: replies)
 
 		return comments
 	}
 
-	func replyLevels(comment: Comment, levels: [String : Int], currentLevel: Int = 0) -> [String : Int] {
-		var levels = levels
+	typealias ReplyLevels = [String : Int]
+	func buildReplyLevels(cache: ReplyLevels = [:], comment: Comment, currentLevel: Int = 0)
+		-> ReplyLevels {
+		var levels = cache
 		levels[comment.id] = currentLevel
 
-		// FIXME remove !
-		levels = (comment.replies.children as! [Comment]).reduce(levels) { levels, c in
-			return replyLevels(comment: c, levels: levels, currentLevel: currentLevel + 1)
+		let replies = comment.replies.children as? [Comment] ?? []
+		return replies.reduce(levels) {
+			buildReplyLevels(cache: $0, comment: $1, currentLevel: currentLevel + 1)
 		}
-
-		return levels
 	}
 
 	private func toViewModel(comment: Comment, replyLevel: Int) -> CommentViewModel {
