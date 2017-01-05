@@ -24,7 +24,7 @@ class LinkDetailCoordinator: Coordinator {
 			.subscribe(onNext: { (newArticle, newComments) in
 				guard let newArticle = newArticle.children.first as? Link else { return }
 				article.value = ArticleViewModelImpl(link: newArticle)
-				comments.value = CommentHelper().toViewModels(commentsListing: newComments)
+				comments.value = CommentConversionService().process(commentsListing: newComments)
 			})
 
 		let controller = LinkDetailViewController(link: details)

@@ -5,7 +5,7 @@ import reddift
 
 @testable import Noosh
 
-class CommentHelperSpec: QuickSpec {
+class CommentConversionServiceSpec: QuickSpec {
 	override func spec() {
 		describe("toViewModels") {
 			context("happy path") {
@@ -23,7 +23,7 @@ class CommentHelperSpec: QuickSpec {
 						options: JSONSerialization.ReadingOptions.mutableContainers
 					) as! JSONDictionary
 
-					let helper = CommentHelper()
+					let helper = CommentConversionService()
 					let comment = Comment(json: json)
 					commentThread = helper.toViewModels(comment: comment)
 				}

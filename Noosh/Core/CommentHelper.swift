@@ -1,14 +1,14 @@
 import Foundation
 import reddift
 
-class CommentHelper {
+class CommentConversionService {
 	let prettyNumbers: PrettyNumbers
 
 	init(prettyNumbers: PrettyNumbers = PrettyNumbers(dateProvider: DateProviderImpl())) {
 		self.prettyNumbers = prettyNumbers
 	}
 
-	func toViewModels(commentsListing: Listing) -> [[CommentViewModel]] {
+	func process(commentsListing: Listing) -> [[CommentViewModel]] {
 		guard let comments = commentsListing.children.filter({ $0 is Comment }) as? [Comment] else {
 			// FIXME do not crash in production
 			fatalError("could not covert comment listings to [Comment]")
@@ -17,7 +17,7 @@ class CommentHelper {
 		return comments.flatMap { toViewModels(comment: $0) }
 	}
 
-	func toViewModels(comment: Comment, replyLevels: ReplyLevels? = nil) -> [CommentViewModel] {
+	func toViewModels(comment: Comment, replyLevels: [String : Int]? = nil) -> [CommentViewModel] {
 		let replyLevels = replyLevels ?? buildReplyLevels(comment: comment)
 		guard let replyLevel = replyLevels[comment.id] else {
 			// FIXME do not crash in production
@@ -34,8 +34,8 @@ class CommentHelper {
 		return comments
 	}
 
-	typealias ReplyLevels = [String : Int]
-	func buildReplyLevels(cache: ReplyLevels = [:], comment: Comment, currentLevel: Int = 0)
+	private typealias ReplyLevels = [String : Int]
+	private func buildReplyLevels(cache: ReplyLevels = [:], comment: Comment, currentLevel: Int = 0)
 		-> ReplyLevels {
 		var levels = cache
 		levels[comment.id] = currentLevel
