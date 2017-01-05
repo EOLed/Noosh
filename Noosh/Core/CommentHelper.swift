@@ -8,9 +8,21 @@ class CommentHelper {
 		self.prettyNumbers = prettyNumbers
 	}
 
+	func toViewModels(commentsListing: Listing) -> [[CommentViewModel]] {
+		guard let comments = commentsListing.children.filter({ $0 is Comment }) as? [Comment] else {
+			// FIXME do not crash in production
+			fatalError("could not covert comment listings to [Comment]")
+		}
+
+		return comments.flatMap { toViewModels(comment: $0) }
+	}
+
 	func toViewModels(comment: Comment, replyLevels: ReplyLevels? = nil) -> [CommentViewModel] {
 		let replyLevels = replyLevels ?? buildReplyLevels(comment: comment)
-		guard let replyLevel = replyLevels[comment.id] else { return [] }
+		guard let replyLevel = replyLevels[comment.id] else {
+			// FIXME do not crash in production
+			fatalError("Could not determine reply level for comment \(comment.id)")
+		}
 
 		var comments = [toViewModel(comment: comment, replyLevel: replyLevel)]
 		let replies = (comment.replies.children as? [Comment] ?? []).flatMap {

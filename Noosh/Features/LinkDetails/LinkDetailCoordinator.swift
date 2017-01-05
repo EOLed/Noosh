@@ -21,9 +21,10 @@ class LinkDetailCoordinator: Coordinator {
 
 		_ = listingsEndpoint.getComments(linkId: link.id, sort: .hot)
 			.observeOn(MainScheduler.instance)
-			.subscribe(onNext: { (newArticle, comments) in
+			.subscribe(onNext: { (newArticle, newComments) in
 				guard let newArticle = newArticle.children.first as? Link else { return }
 				article.value = ArticleViewModelImpl(link: newArticle)
+				comments.value = CommentHelper().toViewModels(commentsListing: newComments)
 			})
 
 		let controller = LinkDetailViewController(link: details)
