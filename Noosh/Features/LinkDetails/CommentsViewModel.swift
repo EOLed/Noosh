@@ -2,9 +2,9 @@ import Foundation
 import RxSwift
 
 protocol CommentsViewModel {
-	var comments: Variable<[CommentViewModel]> { get }
+	var threads: Variable<[[CommentViewModel]]> { get }
 }
 
 struct CommentsViewModelImpl: CommentsViewModel {
-	let comments: Variable<[CommentViewModel]>
+	let threads: Variable<[[CommentViewModel]]>
 }

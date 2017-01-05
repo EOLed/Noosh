@@ -15,9 +15,9 @@ class LinkDetailCoordinator: Coordinator {
 
 	func start(link: LinkCellViewModel) {
 		let article: Variable<ArticleViewModel> = Variable(ArticleViewModelImpl(link: link))
-		let comments = Variable<[CommentViewModel]>([])
+		let comments = Variable<[[CommentViewModel]]>([])
 		let details =
-			LinkDetailViewModelImpl(article: article, comments: CommentsViewModelImpl(comments: comments))
+			LinkDetailViewModelImpl(article: article, comments: CommentsViewModelImpl(threads: comments))
 
 		_ = listingsEndpoint.getComments(linkId: link.id, sort: .hot)
 			.observeOn(MainScheduler.instance)
