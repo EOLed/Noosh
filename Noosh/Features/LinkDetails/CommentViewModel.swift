@@ -1,4 +1,5 @@
 import Foundation
+import reddift
 
 protocol CommentViewModel {
 	var id: String { get }
@@ -24,4 +25,24 @@ struct CommentViewModelImpl: CommentViewModel, Factory {
 	let replyLevel: Int
 	let score: Int?
 	/// sourcery:end
+}
+
+extension CommentViewModelImpl {
+	init(
+		comment: Comment,
+		replyLevel: Int,
+		prettyNumbers: PrettyNumbers = PrettyNumbers(dateProvider: DateProviderImpl())
+	) {
+		self.init(
+			id: comment.id,
+			author: comment.author,
+			authorFlair: comment.authorFlairText,
+			body: comment.body,
+			createdAt: prettyNumbers.timeAgo(epochUtc: comment.createdUtc),
+			edited: comment.edited,
+			parentId: comment.parentId,
+			replyLevel: replyLevel,
+			score: comment.score
+		)
+	}
 }
