@@ -19,26 +19,32 @@ class LinkDetailViewController: UIViewController {
 	}
 
 	override func viewDidLoad() {
-		createdAt.text = link.createdAt
-		subreddit.text = link.subreddit
-		username.text = link.author
+		super.viewDidLoad()
 
-		if let authorFlair = link.authorFlair {
+		_ = link.article.asObservable().subscribe(onNext: { [weak self] in self?.update(article: $0) })
+	}
+
+	private func update(article: ArticleViewModel) {
+		createdAt.text = article.createdAt
+		subreddit.text = article.subreddit
+		username.text = article.author
+
+		if let authorFlair = article.authorFlair {
 			self.authorFlair.text = authorFlair
 		} else {
 			authorFlair.text = "hi"
 		}
 
-		linkTitle.text = link.title
+		linkTitle.text = article.title
 
-		if let body = link.body {
+		if let body = article.body {
 			self.body.text = body
 		} else {
 			self.body.text = "bod"
 		}
 
-		voteCount.text = link.voteCount
-		commentCount.text = link.commentCount
+		voteCount.text = article.voteCount
+		commentCount.text = article.commentCount
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

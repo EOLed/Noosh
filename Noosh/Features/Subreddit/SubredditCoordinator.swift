@@ -6,13 +6,13 @@ import RxSwift
 class SubredditCoordinator: Coordinator {
 	fileprivate let navigationController: UINavigationController
 	fileprivate let session: Session
-	private let endpoint: SubredditEndpoint
+	private let endpoint: ListingsEndpoint
 	private var subredditController: SubredditViewController?
 	fileprivate var linkDetailCoordinator: LinkDetailCoordinator?
 
 	init(navigationController: UINavigationController, session: Session) {
 		self.navigationController = navigationController
-		self.endpoint = SubredditEndpoint(session: session)
+		self.endpoint = ListingsEndpoint(session: session)
 		self.session = session
 	}
 
